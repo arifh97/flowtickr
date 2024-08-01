@@ -5,11 +5,13 @@ sans-serif;
 $white:#fff;
 $black:#000;
 $primary: #4DD5B8;
-$secondary: #050505;
-$text:#727277;
+$secondary: #FF823C;
+$text:#8E8F95;
 $heading: #161A23;
-$border:#4B4B4B;
+$border:#EAEAEA;
 $bg:$white;
+$bgGray:#F8F8F8;
 :root {
     scroll-behavior: auto !important;
+    --bs-border-color: #EAEAEA;
 }
