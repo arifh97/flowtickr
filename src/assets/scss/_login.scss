@@ -1,0 +1,24 @@
+.login {
+    @include mmd {
+        flex-direction: column-reverse;
+    }
+    &-img {
+        padding-right: 10px;
+    }
+    &-left {
+        background-color: rgba($color: $primary, $alpha: .15);
+        width: 50%;
+        flex: 0 0 auto;
+        @include mmd {
+            width: 100%;
+        }
+    }
+    &-right {
+        width: 50%;
+        flex: 0 0 auto;
+        @include mmd {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+    }
+}
