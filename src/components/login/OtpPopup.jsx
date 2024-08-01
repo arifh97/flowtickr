@@ -1,7 +1,7 @@
 import { LiaAngleLeftSolid} from "react-icons/lia";
-import FormBox from "./FormBox";
+import FormBox from "../FormBox";
 
-export default function OtpPopup({className, onClick}) {
+export default function OtpPopup({className, onClick, clickProfile}) {
   return (
     <div className={`login-otp align-items-center justify-content-center p-3 position-fixed top-0 start-0 w-100 z-2 bg-black bg-opacity-20 h-100 ${className}`}>
       <div className="login-otp-wrap bg-white p-4 rounded-4">
@@ -10,7 +10,7 @@ export default function OtpPopup({className, onClick}) {
           <h4 className="mb-0">User Validation </h4>
         </div>
         <FormBox className="mb-3" type="tel" label="Enter the code what we have send in your Email" placeholder="Type here" />
-        <button className="btn bg-primary w-100 fs-14">Verify code</button>
+        <button onClick={clickProfile} className="btn bg-primary w-100 fs-14">Verify code</button>
       </div>
     </div>
   )

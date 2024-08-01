@@ -49,7 +49,9 @@
                     }
                 }
             }
-            & .country-value {}
+            & .form-control {
+                --bs-input-y: 6px;
+            }
         }
     }
     &-or {
@@ -61,8 +63,12 @@
     }
     &-otp {
         &-wrap {
-            width: 470px;
+            max-width: 470px;
+            width: 100%;
             flex: 0 0 auto;
+        }
+        &-scroll {
+            @include custom-scroll(6px);
         }
     }
     &-close {

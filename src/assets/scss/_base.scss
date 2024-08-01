@@ -64,17 +64,16 @@ input[type=number] {
     appearance: textfield;
 }
 
-.common {}
-
 .btn {
     --bs-btn-padding-x: 20px;
-    --bs-btn-padding-y: 10px;
+    --bs-btn-padding-y: 9px;
     --bs-btn-color: #151B22;
     --bs-btn-border-width: 1px;
     --bs-btn-border-color: #4DD5B8;
     --bs-btn-font-size: 12px;
     --bs-btn-border-radius: 8px;
     --bs-btn-font-weight: 500;
+    cursor: pointer;
     &:hover {
         background-color: $primary !important;
         border-color: $primary !important;
@@ -90,10 +89,9 @@ input[type=number] {
     }
     &.bg-transparent {
         border-color: $primary !important;
-        color: $primary !important;
+        color: $heading !important;
         &:hover {
             background-color: $primary !important;
-            color: $secondary !important;
         }
     }
 }
@@ -106,7 +104,13 @@ input[type=number] {
     &-control {
         font-size: 14px;
         line-height: calc(24px/14px);
-        padding: 6px 16px;
+        padding: var(--bs-input-y, 7px) var(--bs-input-x, 16px);
         background-color: $bgGray;
+    }
+    &-file {
+        border: 1px dashed $secondary;
+        background-color: rgba($color: $secondary, $alpha: .04);
+        border-radius: 12px;
+        height: 185px;
     }
 }

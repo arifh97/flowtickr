@@ -1,27 +1,27 @@
 import { useState } from "react";
 import PageTitle from "../components/PageTitle";
-import CountryCode from "../components/login/CountryCode";
 import OtpPopup from '../components/login/OtpPopup'
+import Profile from '../components/login/Profile'
 
 import img from '../assets/img/login/left-img.png'
 import logo from '../assets/img/logo.png'
 import google from '../assets/img/social/google.png'
+import PhoneInput from "../components/login/PhoneInput";
 
 export default function Index() {
-
-  const [phone, setPhone] = useState('');
-  const [isValid, setIsValid] = useState(true);
-
-  const handleChange = (event) => {
-    const value = event.target.value;
-    // const pattern = /^[7-9][0-9]{9}$/;
-    setPhone(value);
-    // setIsValid(pattern.test(value));
-  };
 
   const [otpShow, setOtpShow] = useState(false);
   const showOtp = () => {
     setOtpShow(!otpShow)
+  }
+  const [profileShow, setProfileShow] = useState(false);
+  const showProfile = () => {
+    setProfileShow(!profileShow);
+    setOtpShow(false)
+  }
+  const toggleModal = () => {
+    setProfileShow(false);
+    setOtpShow(true)
   }
 
   return (
@@ -44,21 +44,8 @@ export default function Index() {
                 <p className="fs-14">Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                   amet sint Velit officia.</p>
               </div>
-              <div className="d-flex align-items-center gap-2 mb-3 pb-md-1">
-                <CountryCode />
-                <div className="d-flex flex-column gap-2 w-100">
-                  <input
-                    type="text"
-                    id="phone"
-                    className={`form-control ${isValid ? '' : 'is-invalid'}`}
-                    value={phone}
-                    placeholder="1234567890"
-                    onChange={handleChange}
-                    pattern="[7-9]{1}[0-9]{9}"
-                    title="Phone number must start with 7, 8, or 9 and be 10 digits long"
-                  />
-                  {/* {!isValid && <div className="invalid-feedback">Please enter a valid phone number.</div>} */}
-                </div>
+              <div className="mb-3 pb-md-1">
+                <PhoneInput />
               </div>
               <div>
                 <button onClick={() => showOtp()} className="btn bg-primary text-heading w-100 fs-6">Get Otp</button>
@@ -79,8 +66,12 @@ export default function Index() {
         </div>
       </div>
       {/* OtpModal */}
-      <OtpPopup onClick={() => showOtp()} className={otpShow ? 'd-flex' : 'd-none'} />
+      <OtpPopup clickProfile={() => showProfile()} onClick={() => showOtp()} className={otpShow ? 'd-flex' : 'd-none'} />
       {/* OtpModal */}
+      
+      {/* ProfileModal */}
+      <Profile onClick={() => toggleModal()} className={profileShow ? 'd-flex' : 'd-none'} />
+      {/* ProfileModal */}
     </>
   )
 }
