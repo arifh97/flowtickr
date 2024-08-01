@@ -11,10 +11,21 @@
     &-heading {
         color: $heading !important;
     }
+    &-body {
+        color: $text !important;
+    }
 }
 
 .cursor {
     &-pointer {
         cursor: pointer !important;
+    }
+}
+
+.bg {
+    &-opacity {
+        &-20 {
+            --bs-bg-opacity: .20;
+        }
     }
 }

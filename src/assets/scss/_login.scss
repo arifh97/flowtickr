@@ -34,7 +34,6 @@
         max-width: 400px;
         &-content {
             margin-top: 20px;
-            --input: 88px;
             & h2 {
                 font-size: 32px;
                 line-height: 150%;
@@ -50,18 +49,7 @@
                     }
                 }
             }
-            & .form-control {
-                font-size: 14px;
-                line-height: calc(24px/14px);
-                padding: 6px 16px;
-                background-color: $bgGray;
-            }
-            & .country-value {
-                width: var(--input);
-                flex: 0 0 auto;
-                border-color: #EAEAEA;
-                background-color: transparent;
-            }
+            & .country-value {}
         }
     }
     &-or {
@@ -71,10 +59,39 @@
             background-color: $border;
         }
     }
+    &-otp {
+        &-wrap {
+            width: 470px;
+            flex: 0 0 auto;
+        }
+    }
+    &-close {
+        --width: 40px;
+        width: var(--width);
+        height: var(--width);
+        background-color: $bgGray;
+        font-size: 18px;
+        &:hover {
+            background-color: $primary;
+            color: $heading;
+        }
+    }
+    &-popup {
+        &-header {
+            & h4 {
+                font-size: 18px;
+                line-height: 150%;
+            }
+        }
+    }
 }
 
 .country {
     &-value {
+        width: var(--input, 88px);
+        flex: 0 0 auto;
+        border-color: #EAEAEA;
+        background-color: transparent;
         user-select: none;
         &.show {
             border-bottom-left-radius: 0px !important;

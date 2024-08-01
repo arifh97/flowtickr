@@ -11,12 +11,10 @@ export default function CountryCode() {
         fetch('https://restcountries.com/v3.1/all')
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 const countryCodes = data.map(item => ({
                     code: (item.idd.root?item.idd.root:'') + (item.idd.suffixes ? item.idd.suffixes[0] : '')
                 }));
                 setCountries(countryCodes);
-                console.log();
             })
             .catch(error => console.error('Error fetching country data:', error));
     }, []);
@@ -42,9 +40,9 @@ export default function CountryCode() {
                 {isShow ? <LiaAngleUpSolid /> : <LiaAngleDownSolid />}
             </div>
             {isShow && (
-                <div className={`country-list overflow-auto w-100 position-absolute top-100 start-0 ${isShow ? 'show' : ''}`}>
+                <div className={`country-list pt-0 overflow-auto w-100 position-absolute top-100 start-0 ${isShow ? 'show' : ''}`}>
                     <ul>
-                        <li className="p-0 pb-2 px-1 bg-transparent">
+                        <li className="py-2 px-1 position-sticky top-0 start-0 w-100 z-2 bg-white">
                             <input
                                 type="text"
                                 className="form-control fs-12 px-2"
@@ -55,7 +53,7 @@ export default function CountryCode() {
                         </li>
                         {filteredCountries.map((country, key) => (
                             <li onClick={() => handleChange(country)} key={key} className={`fs-14 fw-medium lh-base cursor-pointer ${country.code === selectCode?'selected':''}`}>
-                                {country.name} {country.code}
+                               {country.code}
                             </li>
                         ))}
                     </ul>

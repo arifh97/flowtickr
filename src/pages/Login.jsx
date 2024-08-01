@@ -1,6 +1,8 @@
 import { useState } from "react";
 import PageTitle from "../components/PageTitle";
 import CountryCode from "../components/login/CountryCode";
+import OtpPopup from '../components/login/OtpPopup'
+
 import img from '../assets/img/login/left-img.png'
 import logo from '../assets/img/logo.png'
 import google from '../assets/img/social/google.png'
@@ -16,6 +18,11 @@ export default function Index() {
     setPhone(value);
     // setIsValid(pattern.test(value));
   };
+
+  const [otpShow, setOtpShow] = useState(false);
+  const showOtp = () => {
+    setOtpShow(!otpShow)
+  }
 
   return (
     <>
@@ -54,7 +61,7 @@ export default function Index() {
                 </div>
               </div>
               <div>
-                <button className="btn bg-primary text-heading w-100 fs-6">Get Otp</button>
+                <button onClick={() => showOtp()} className="btn bg-primary text-heading w-100 fs-6">Get Otp</button>
               </div>
               <div className="login-or mt-3 pt-1 pt-md-2">
                 <div className="d-flex align-items-center justify-content-center gap-2 mb-3 pb-1 pb-md-2">
@@ -71,6 +78,9 @@ export default function Index() {
           </div>
         </div>
       </div>
+      {/* OtpModal */}
+      <OtpPopup onClick={() => showOtp()} className={otpShow ? 'd-flex' : 'd-none'} />
+      {/* OtpModal */}
     </>
   )
 }

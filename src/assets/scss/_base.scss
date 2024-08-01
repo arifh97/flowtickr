@@ -68,7 +68,7 @@ input[type=number] {
 
 .btn {
     --bs-btn-padding-x: 20px;
-    --bs-btn-padding-y: 6px;
+    --bs-btn-padding-y: 10px;
     --bs-btn-color: #151B22;
     --bs-btn-border-width: 1px;
     --bs-btn-border-color: #4DD5B8;
@@ -85,7 +85,7 @@ input[type=number] {
         color: $heading !important;
         &:hover {
             background-color: transparent !important;
-            color: $heading !important;
+            color: $primary !important;
         }
     }
     &.bg-transparent {
@@ -100,4 +100,13 @@ input[type=number] {
 
 #root {
     overflow: hidden;
+}
+
+.form {
+    &-control {
+        font-size: 14px;
+        line-height: calc(24px/14px);
+        padding: 6px 16px;
+        background-color: $bgGray;
+    }
 }
