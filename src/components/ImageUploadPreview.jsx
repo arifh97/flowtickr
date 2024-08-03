@@ -28,6 +28,7 @@ export default function ImageUploadPreview({className, id}) {
                     type="file"
                     id={id}
                     className="d-none"
+                    accept="image/*"
                     onChange={handleImageUpload}
                 />
             </label>

@@ -1,3 +1,120 @@
 .dashboard {
     background-color: $bgGray;
+    --d-left: 240px;
+    &-left {
+        width: var(--d-left);
+        flex: 0 0 auto;
+        border-right: 1px solid $border;
+        padding: 30px 16px;
+        padding-top: 0;
+    }
+    &-right {
+        width: calc(100% - var(--d-left));
+        flex: 0 0 auto;
+    }
+    &-logo {
+        padding: 10px;
+    }
+    &-menu {
+        & nav {
+            margin-top: 30px;
+            & li {
+                & a {
+                    font-size: 16px;
+                    line-height: 1.5;
+                    font-weight: 500;
+                    color: $text;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 13px 16px;
+                    &:hover,
+                    &.active {
+                        background-color: $primary;
+                        color: $heading;
+                    }
+                }
+            }
+        }
+        &-bottom {
+            & .btn {
+                & .circle {
+                    --width: 50px;
+                    width: var(--width);
+                    height: var(--width);
+                    background-color: $heading;
+                    color: $white;
+                    font-size: 20px;
+                    margin-left: -10px;
+                }
+            }
+        }
+    }
+    &-topBar {
+        padding: 10px 30px;
+        border-bottom: 1px solid $border;
+        &-search {
+            min-width: 225px;
+            & input {
+                padding-left: 40px;
+                color: $text;
+            }
+        }
+        &-icon {
+            --width: 38px;
+            width: var(--width);
+            height: var(--width);
+            flex: 0 0 auto;
+            border: 1px solid transparent;
+            cursor: pointer;
+            @include transition;
+            &:hover {
+                border-color: $primary;
+                background-color: rgba($color: #EB5757, $alpha: .12) !important;
+            }
+            & span {
+                &.notify {
+                    position: absolute;
+                    --span: 7px;
+                    width: var(--span);
+                    height: var(--span);
+                    border-radius: 100%;
+                    display: block;
+                    border: 1px solid $white;
+                    background-color: #EB5757;
+                    top: 10px;
+                    right: 10px;
+                }
+                &.notice {
+                    background-color: #FF823C;
+                    color: $heading;
+                    border-radius: 100px;
+                    font-size: 10px;
+                    font-weight: 500;
+                    line-height: 130%;
+                    padding: 0 2px;
+                    position: absolute;
+                    top: 5px;
+                    right: 10px;
+                }
+            }
+        }
+    }
+    &-main {
+        padding: 30px;
+        --height: 72px;
+        max-height: calc(100vh - var(--height));
+        @include md {
+            padding: 24px;
+        }
+    }
+}
+
+.profile {
+    &-btn {
+        &:hover {
+            border-color: $primary;
+            background-color: rgba($color: #EB5757, $alpha: .12) !important;
+        }
+        & .img {}
+    }
 }

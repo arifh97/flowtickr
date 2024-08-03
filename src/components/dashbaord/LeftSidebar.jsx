@@ -69,16 +69,16 @@ export default function LeftSidebar() {
         },
     ]
     return (
-        <div className='dashboard-menu d-flex flex-column vh-100'>
+        <div className='dashboard-menu d-flex flex-column h-100'>
             <div className="dashboard-logo">
-                <Link className='d-block'><img src={logo} alt="" /></Link>
+                <Link to="/" className='d-block'><img src={logo} alt="" /></Link>
             </div>
-            <nav className="dashboard-menu">
+            <nav>
                 <ul>
                     {menus.map((item, index) => (
                         <li key={index}>
                             <NavLink to={item.url} className="d-flex align-items-center gap-2">
-                                <span className='icon' dangerouslySetInnerHTML={{__html:item.icon}}></span>
+                                <span className='icon d-flex align-items-center justify-content-center' dangerouslySetInnerHTML={{__html:item.icon}}></span>
                                 <span className='text'>{item.name}</span>
                             </NavLink>
                         </li>
@@ -87,10 +87,10 @@ export default function LeftSidebar() {
             </nav>
             <div className="dashboard-menu-bottom mt-auto">
                 <Link className="d-flex align-items-center btn bg-primary fs-6 position-relative z-1">
-                    <span className="circle position-absolute top-50 start-0 translate-middle-y border border-2 border-primary">
+                    <span className="circle d-flex align-items-center justify-content-center rounded-pill position-absolute top-50 start-0 translate-middle-y border border-2 border-primary">
                         <HiOutlinePlus />
                     </span>
-                    <span>New Strategy</span>
+                    <span className='d-block ms-auto'>New Strategy</span>
                 </Link>
             </div>
         </div>
