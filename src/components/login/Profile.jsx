@@ -5,8 +5,7 @@ import PhoneInput from "./PhoneInput";
 import CountryDropdown from "./CountryDropdown";
 import ImageUploadPreview from "../ImageUploadPreview";
 
-export default function Profile({ className, onClick }) {
-    
+export default function Profile({ className, onClick }) {    
     return (
         <div className={`login-otp align-items-center justify-content-end p-4 position-fixed top-0 start-0 w-100 z-2 bg-black bg-opacity-20 h-100 ${className}`}>
             <div className="login-otp-wrap bg-white py-4 px-3 rounded-4 h-100">
@@ -28,8 +27,8 @@ export default function Profile({ className, onClick }) {
                     <FormBox className="mb-3" type="text" label="Address Line 2" placeholder="Type here" />
                     <ImageUploadPreview className="mb-4" id="profile_upload" />
                     <div className="d-flex flex-column gap-2 mt-auto">
-                        <Link to="/dashboard" className="btn bg-transparent w-100 fs-14 mb-1">Skip</Link>
-                        <Link to="/dashboard" className="btn bg-primary w-100 fs-14">Save Information</Link>
+                        <Link to="/profile" className="btn bg-transparent w-100 fs-14 mb-1">Skip</Link>
+                        <Link to="/profile" className="btn bg-primary w-100 fs-14">Save Information</Link>
                     </div>
                 </div>
             </div>

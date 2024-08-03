@@ -16,9 +16,9 @@ export default function ImageUploadPreview({className, id}) {
         <div className={`form-file ${className}`}>
             <label htmlFor={id} className="form-file-label d-flex align-items-center justify-content-center h-100 cursor-pointer">
                 {imageSrc ? (
-                    <img src={imageSrc} alt="Preview" className="preview-image" />
+                    <img src={imageSrc} alt="Preview" className="form-file-img py-2" />
                 ) : (
-                   <div className="form-file-wrap  px-4 py-5 d-flex flex-column align-items-center justify-content-center">
+                   <div className="form-file-wrap px-4 py-2 d-flex flex-column align-items-center justify-content-center">
                     <p className='fs-14 lh-base fw-medium text-heading'>Drag and Drop your image</p>
                     <p className='fs-14 lh-base fw-medium text-heading'>or</p>
                     <p className='fs-14 lh-base fw-medium text-underline text-secondary'>Browse From Drive</p>

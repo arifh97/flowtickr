@@ -111,6 +111,10 @@ input[type=number] {
         border: 1px dashed $secondary;
         background-color: rgba($color: $secondary, $alpha: .04);
         border-radius: 12px;
-        height: 185px;
+        min-height: 185px;
+        overflow: hidden;
+        &-img {
+            max-height: 100%;
+        }
     }
 }
