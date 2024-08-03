@@ -26,7 +26,7 @@ export default function Index() {
 
   return (
     <>
-      <PageTitle name="Login" />
+      <PageTitle title="Login" />
       <div className="login d-flex flex-wrap align-items-center w-100 vh-100">
         <div className="login-left d-flex align-items-end">
           <div className="login-img w-100">
@@ -66,11 +66,15 @@ export default function Index() {
         </div>
       </div>
       {/* OtpModal */}
-      <OtpPopup clickProfile={() => showProfile()} onClick={() => showOtp()} className={otpShow ? 'd-flex' : 'd-none'} />
+      {otpShow &&
+        < OtpPopup clickProfile={() => showProfile()} onClick={() => showOtp()} className={otpShow ? 'd-flex' : 'd-none'} />
+      }
       {/* OtpModal */}
-      
+
       {/* ProfileModal */}
-      <Profile onClick={() => toggleModal()} className={profileShow ? 'd-flex' : 'd-none'} />
+      {profileShow &&
+        <Profile onClick={() => toggleModal()} className={profileShow ? 'd-flex' : 'd-none'} />
+      }
       {/* ProfileModal */}
     </>
   )

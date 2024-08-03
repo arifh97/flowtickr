@@ -7,6 +7,7 @@ import './assets/scss/style.scss'
 import MainLayout from './pages/MainLayout'
 import Error from './pages/Error'
 import Login from './pages/Login'
+import Home from './pages/Home'
 
 const router = createBrowserRouter([
   {
@@ -15,13 +16,13 @@ const router = createBrowserRouter([
     errorElement:<Error />,
   },
   {
-    path:'/',
+    path:'/profile',
     element: <MainLayout />,
     errorElement:<Error />,
     children:[
       {
         path:'/profile',
-        element:<Login />
+        element:<Home />
       }
     ]
   },
