@@ -5,6 +5,13 @@
     display: flex;
     flex-direction: column;
     gap: var(--gap24);
+    @include lg {
+        --gap24: 16px;
+    }
+    @include mmd {
+        --gap24: 16px;
+        --gap16: 10px;
+    }
     & .btn {
         --bs-btn-border-color: #EAEAEA;
     }
@@ -16,16 +23,28 @@
     }
     &-graph {
         gap: var(--gap24);
+        @include mmd {
+            flex-direction: column;
+        }
         &-list {
             width: 31.93%;
             display: flex;
             flex-direction: column;
             gap: var(--gap16);
+            @include mmd {
+                width: 100%;
+            }
             & .single {
                 gap: 8px;
                 padding: 16px;
                 border-radius: 12px;
                 background-color: $white;
+                @include lg {
+                    padding: 10px;
+                }
+                @include mmd {
+                    padding: 10px;
+                }
                 & .icon {
                     --size: 38px;
                     width: var(--size);
@@ -38,7 +57,7 @@
                 & .text {
                     & p {
                         font-size: 12px;
-                        line-height: calc(18px / 12px);
+                        line-height: 150%;
                         margin-bottom: 3px;
                         font-weight: 500;
                     }
@@ -46,7 +65,6 @@
                         @include font-24;
                         color: $heading;
                         font-weight: 600;
-                        line-height: calc(36px / 24px);
                     }
                 }
             }
@@ -57,6 +75,12 @@
         }
         &-header {
             margin-bottom: 30px;
+            & h4 {
+                color: $heading2;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 150%;
+            }
         }
         & .btn {
             display: inline-flex;
@@ -70,8 +94,8 @@
             background-color: $white;
             border-radius: 12px;
             border: 1px solid $border;
-            & h4 {
-                font-weight: 700;
+            @include mmd {
+                width: 100%;
             }
             & .graph {
                 & img {
@@ -97,16 +121,31 @@
         }
         &-cards {
             gap: var(--gap16);
+            @include lg {
+                justify-content: center;
+            }
         }
         &-card {
             border-radius: 12px;
             background: $white;
             box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
             padding: var(--gap16);
-            max-width: 265px;
+            max-width: 263px;
             // max-width: calc(265px - var(--gap16));
             @include xxxl {
                 max-width: 19.17%;
+            }
+            @include xl {
+                max-width: 32.2%;
+            }
+            @include lg {
+                max-width: calc(50% - var(--gap16));
+            }
+            @include md {
+                max-width: 220px;
+            }
+            @include sm {
+                max-width: 100%;
             }
             & .subTitle {
                 padding: 2px 8px;
@@ -120,6 +159,9 @@
                 @include font-14;
                 font-weight: 500;
                 margin-bottom: 12px;
+                @include mmd {
+                    margin-bottom: 8px;
+                }
             }
             & p {
                 @include font-12;

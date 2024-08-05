@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { LiaAngleDownSolid, LiaAngleUpSolid } from "react-icons/lia";
+import { FaBars } from "react-icons/fa";
 import welcome from '../../assets/img/dashboard/welcome.png'
 import profile_img from '../../assets/img/dashboard/profile.png'
-import { Link } from "react-router-dom";
+import logo from '../../assets/img/logo.png'
 
-export default function TopBar() {
+export default function TopBar({onClick}) {
     const [profileModal, setProfileModal] = useState(false);
+    const navigate = useNavigate();
+    useEffect(() => {
+        console.log(useNavigate);
+    },[navigate])
     return (
+        <>
         <div className='dashboard-topBar d-flex align-items-center'>
-            <div className='d-flex align-items-center welcome gap-2'>
+            <div className='d-none d-xl-flex align-items-center welcome gap-2'>
                 <div className="welcome-img"><img width="40px" height="40px" src={welcome} alt="" /></div>
                 <div className="welcome-text">
                     <h5 className="mb-1">Good morning, Murad hossain</h5>
@@ -16,7 +23,7 @@ export default function TopBar() {
                 </div>
             </div>
             <div className="ms-auto d-flex align-items-center gap-3 justify-content-end">
-                <div className="dashboard-topBar-search bg-white rounded-3 position-relative z-1">
+                <div className="dashboard-topBar-search bg-white rounded-3 position-relative z-1 d-none d-md-block">
                     <div className="icon d-flex align-items-center justify-content-center position-absolute top-50 translate-middle-y ms-3">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.75 15.7502L12.4928 12.4929M12.4928 12.4929C13.0499 11.9357 13.4919 11.2743 13.7934 10.5463C14.095 9.81834 14.2502 9.03811 14.2502 8.25015C14.2502 7.4622 14.095 6.68197 13.7934 5.95399C13.4919 5.22602 13.0499 4.56457 12.4928 4.0074C11.9356 3.45024 11.2741 3.00827 10.5462 2.70673C9.81819 2.4052 9.03795 2.25 8.25 2.25C7.46205 2.25 6.68181 2.4052 5.95384 2.70673C5.22587 3.00827 4.56442 3.45024 4.00725 4.0074C2.882 5.13265 2.24985 6.65881 2.24985 8.25015C2.24985 9.84149 2.882 11.3677 4.00725 12.4929C5.1325 13.6182 6.65866 14.2503 8.25 14.2503C9.84134 14.2503 11.3675 13.6182 12.4928 12.4929Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
@@ -25,6 +32,7 @@ export default function TopBar() {
                     </div>
                     <input type="search" placeholder="Search" className='form-control border-0 bg-transparent' />
                 </div>
+                <Link className="d-block d-md-none me-auto" to="/"><img width={82} src={logo} alt="" /></Link>
                 <div className="dashboard-topBar-icon bg-white rounded-pill position-relative z-1 d-flex align-items-center justify-content-center">
                     <span className="notify"></span>
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,22 +59,27 @@ export default function TopBar() {
                         <path d="M8.72325 10.272C8.67512 10.272 8.62747 10.2814 8.583 10.2998C8.53854 10.3183 8.49814 10.3452 8.46411 10.3793C8.43008 10.4133 8.40309 10.4537 8.38468 10.4982C8.36627 10.5426 8.3568 10.5903 8.35681 10.6384V11.7377C8.3568 11.7858 8.36628 11.8335 8.38469 11.878C8.4031 11.9224 8.43009 11.9628 8.46412 11.9968C8.49815 12.0309 8.53855 12.0579 8.58301 12.0763C8.62747 12.0947 8.67512 12.1042 8.72325 12.1042H9.82256C9.87068 12.1042 9.91834 12.0947 9.9628 12.0763C10.0073 12.0579 10.0477 12.0309 10.0817 11.9969C10.1157 11.9628 10.1427 11.9224 10.1611 11.878C10.1795 11.8335 10.189 11.7858 10.189 11.7377C10.189 11.6896 10.1795 11.6419 10.1611 11.5975C10.1427 11.553 10.1157 11.5126 10.0817 11.4786C10.0477 11.4446 10.0073 11.4176 9.9628 11.3991C9.91834 11.3807 9.87068 11.3713 9.82256 11.3713H9.08968V10.6384C9.0897 10.5903 9.08023 10.5426 9.06182 10.4982C9.0434 10.4537 9.01641 10.4133 8.98238 10.3793C8.94835 10.3452 8.90795 10.3183 8.86349 10.2998C8.81903 10.2814 8.77137 10.272 8.72325 10.272Z" fill="currentColor" fillOpacity="0.2" />
                     </svg>
                 </div>
-                <div className={`profile position-relative z-1 ${profileModal&&'show'}`}>
-                    <button onClick={() => setProfileModal(!profileModal)} className="profile-btn bg-white border-0 rounded-pill d-flex align-items-center justify-content-center gap-2">
+                <div className={`profile position-relative z-1`}>
+                    <button onClick={() => setProfileModal(!profileModal)} className={`profile-btn pe-2 bg-white rounded-pill d-flex align-items-center justify-content-center gap-2 ${profileModal&&'show'}`}>
                         <div className="img"><img src={profile_img} alt="" /></div>
-                        <span className='text d-block fs-14 lh-base me-1'>Murad Hossain</span>
+                        <span className='text d-none d-lg-block fs-14 lh-base'>Murad Hossain</span>
                         {profileModal ? <LiaAngleUpSolid /> : <LiaAngleDownSolid />}
                     </button>
                     {profileModal &&
-                        <div className="profile-dropdown position-absolute top-100 start-50 translate-middle-x border border-primary bg-white">
+                        <div className="profile-dropdown border-top-0 position-absolute top-100 start-50 translate-middle-x border border-primary bg-white">
                             <ul>
-                                <li><Link href="/profile">Profile</Link></li>
-                                <li><Link href="/">Logout</Link></li>
+                                <li><Link className="fs-6 d-block lh-base fw-semibold" to="/profile">Profile</Link></li>
+                                <li><Link className="fs-6 d-block lh-base fw-semibold" to="/">Logout</Link></li>
                             </ul>
                         </div>
                     }
                 </div>
             </div>
         </div>
+        <div className="dashboard-mobile d-flex d-md-none align-items-center justify-content-between px-3 py-2">
+            <h4 className="mb-0 text-capitalize">Dashboard</h4>
+            <button onClick={onClick} className="dashboard-toggleBtn p-0 bg-primary text-heading rounded-pill d-flex d-md-none align-items-center justify-content-center"><FaBars /></button>
+        </div>
+        </>
     )
 }

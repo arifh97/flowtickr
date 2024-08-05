@@ -5,6 +5,7 @@ body {
     color: $text;
     font-family: $font-1;
     background-color: $bg;
+    overflow-y: hidden;
 }
 
 h1,
@@ -118,6 +119,9 @@ span {
         border-radius: 12px;
         min-height: 185px;
         overflow: hidden;
+        @include sm {
+            min-height: 145px;
+        }
         &-img {
             max-height: 100%;
         }

@@ -67,7 +67,7 @@ export default function Index() {
       </div>
       {/* OtpModal */}
       {otpShow &&
-        < OtpPopup clickProfile={() => showProfile()} onClick={() => showOtp()} className={otpShow ? 'd-flex' : 'd-none'} />
+        <OtpPopup clickProfile={() => showProfile()} onClick={() => showOtp()} className={otpShow ? 'd-flex' : 'd-none'} />
       }
       {/* OtpModal */}
 

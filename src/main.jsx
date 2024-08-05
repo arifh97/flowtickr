@@ -8,6 +8,10 @@ import MainLayout from './pages/MainLayout'
 import Error from './pages/Error'
 import Login from './pages/Login'
 import Home from './pages/Home'
+import Strategies from './pages/Strategies'
+import Contact from './pages/Contact'
+import Marketplace from './pages/MarketPlace'
+import Profile from './pages/Profile'
 
 const router = createBrowserRouter([
   {
@@ -16,14 +20,30 @@ const router = createBrowserRouter([
     errorElement:<Error />,
   },
   {
-    path:'/profile',
+    path:'/',
     element: <MainLayout />,
     errorElement:<Error />,
     children:[
       {
-        path:'/profile',
+        path:'/dashboard',
         element:<Home />
-      }
+      },
+      {
+        path: '/strategies',
+        element:<Strategies/>
+      },
+      {
+        path: '/contact',
+        element:<Contact />
+      },
+      {
+        path: '/marketplace',
+        element:<Marketplace />
+      },
+      {
+        path: '/profile',
+        element:<Profile />
+      },
     ]
   },
 ])
