@@ -14,20 +14,20 @@ export default function Home() {
       color: '#4DD5B8',
       title: 'Profit',
       num: 45,
-      icon:listIcon_1,
+      icon: listIcon_1,
 
     },
     {
       color: '#FF823C',
       title: 'Winning streak',
       num: 12,
-      icon:listIcon_2,
+      icon: listIcon_2,
     },
     {
       color: '#FFC833',
       title: 'No. of days actively traded.',
       num: 12,
-      icon:listIcon_3,
+      icon: listIcon_3,
     },
   ]
 
@@ -48,10 +48,58 @@ export default function Home() {
       title: 'Strategy Name AI Calculation ',
       des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
     },
+    {
+      title: 'Strategy Name AI Calculation ',
+      des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
+    },
+    {
+      title: 'Strategy Name AI Calculation ',
+      des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
+    },
+    {
+      title: 'Strategy Name AI Calculation ',
+      des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
+    },
+    {
+      title: 'Strategy Name AI Calculation ',
+      des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
+    },
+    {
+      title: 'Strategy Name AI Calculation ',
+      des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
+    },
+    {
+      title: 'Strategy Name AI Calculation ',
+      des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
+    },
+    {
+      title: 'Strategy Name AI Calculation ',
+      des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
+    },
+    {
+      title: 'Strategy Name AI Calculation ',
+      des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
+    },
+    {
+      title: 'Strategy Name AI Calculation ',
+      des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
+    },
+    {
+      title: 'Strategy Name AI Calculation ',
+      des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
+    },
+    {
+      title: 'Strategy Name AI Calculation ',
+      des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
+    },
+    {
+      title: 'Strategy Name AI Calculation ',
+      des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
+    },
   ]
   return (
     <>
-      <PageTitle title="Home"/>
+      <PageTitle title="Home" />
       <div className="profile">
         <div className="profile-banner">
           <img src={banner} alt="" />
@@ -82,15 +130,17 @@ export default function Home() {
           </div>
         </div>
         <div className="profile-profit">
-          <h3>Profitability Strategies</h3>
-          <div className="profile-profit-cards d-flex">
+          <h3 id="title">Profitability Strategies</h3>
+          <div className="profile-profit-cards d-flex flex-wrap">
             {profitCard.map((item, index) => (
               <div className="profile-profit-card" key={index}>
                 <span className="subTitle">Subscribed</span>
                 <h4>{item.title}</h4>
                 <p>{item.des}</p>
-                <a href="#" className="btn">Run Strategy</a>
-                <button id="menu"><img src={threeDot} alt="" /></button>
+                <div className="card-btn">
+                  <a href="#" className="btn">Run Strategy</a>
+                  <button id="menu"><img src={threeDot} alt="" /></button>
+                </div>
               </div>
             ))}
           </div>
