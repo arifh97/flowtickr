@@ -1,12 +1,14 @@
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../../assets/img/logo.png'
 import { HiOutlinePlus } from "react-icons/hi2";
+import { IoClose } from "react-icons/io5";
 
-export default function LeftSidebar() {
+
+export default function LeftSidebar({onClick}) {
     const menus = [
         {
             name: 'Home',
-            url: '/profile',
+            url: '/dashboard',
             icon: `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14.8126 7.49999C14.8126 7.35081 14.7534 7.20774 14.6479 7.10225C14.5424 6.99676 14.3993 6.93749 14.2501 6.93749C14.1009 6.93749 13.9579 6.99676 13.8524 7.10225C13.7469 7.20774 13.6876 7.35081 13.6876 7.49999H14.8126ZM4.31262 7.49999C4.31262 7.35081 4.25335 7.20774 4.14786 7.10225C4.04237 6.99676 3.8993 6.93749 3.75012 6.93749C3.60093 6.93749 3.45786 6.99676 3.35237 7.10225C3.24688 7.20774 3.18762 7.35081 3.18762 7.49999H4.31262ZM15.3526 9.39749C15.4041 9.45276 15.4662 9.49709 15.5352 9.52783C15.6042 9.55857 15.6787 9.5751 15.7542 9.57644C15.8298 9.57777 15.9048 9.56388 15.9748 9.53559C16.0449 9.50729 16.1085 9.46519 16.1619 9.41177C16.2153 9.35836 16.2574 9.29473 16.2857 9.22469C16.314 9.15465 16.3279 9.07963 16.3266 9.0041C16.3252 8.92857 16.3087 8.85409 16.278 8.78509C16.2472 8.71609 16.2029 8.65399 16.1476 8.60249L15.3526 9.39749ZM9.00012 2.24999L9.39761 1.85249C9.29215 1.74716 9.14918 1.68799 9.00012 1.68799C8.85105 1.68799 8.70808 1.74716 8.60262 1.85249L9.00012 2.24999ZM1.85262 8.60249C1.79735 8.65399 1.75302 8.71609 1.72228 8.78509C1.69154 8.85409 1.675 8.92857 1.67367 9.0041C1.67234 9.07963 1.68623 9.15465 1.71452 9.22469C1.74281 9.29473 1.78492 9.35836 1.83834 9.41177C1.89175 9.46519 1.95538 9.50729 2.02542 9.53559C2.09546 9.56388 2.17048 9.57777 2.24601 9.57644C2.32153 9.5751 2.39602 9.55857 2.46502 9.52783C2.53402 9.49709 2.59612 9.45276 2.64762 9.39749L1.85262 8.60249ZM5.25012 16.3125H12.7501V15.1875H5.25012V16.3125ZM14.8126 14.25V7.49999H13.6876V14.25H14.8126ZM4.31262 14.25V7.49999H3.18762V14.25H4.31262ZM16.1476 8.60249L9.39761 1.85249L8.60262 2.64749L15.3526 9.39749L16.1476 8.60249ZM8.60262 1.85249L1.85262 8.60249L2.64762 9.39749L9.39761 2.64749L8.60262 1.85249ZM12.7501 16.3125C13.2971 16.3125 13.8217 16.0952 14.2085 15.7084C14.5953 15.3216 14.8126 14.797 14.8126 14.25H13.6876C13.6876 14.7675 13.2676 15.1875 12.7501 15.1875V16.3125ZM5.25012 15.1875C4.73262 15.1875 4.31262 14.7675 4.31262 14.25H3.18762C3.18762 14.797 3.40491 15.3216 3.79171 15.7084C4.1785 16.0952 4.70311 16.3125 5.25012 16.3125V15.1875Z" fill="currentColor"/>
                     </svg>`,
@@ -70,8 +72,9 @@ export default function LeftSidebar() {
     ]
     return (
         <div className='dashboard-menu d-flex flex-column h-100'>
-            <div className="dashboard-logo">
+            <div className="dashboard-logo d-flex align-items-center justify-content-between">
                 <Link to="/" className='d-block'><img src={logo} alt="" /></Link>
+                <button onClick={onClick} className="dashboard-toggleBtn d-md-none d-flex align-items-center justify-content-center rounded-pill bg-primary text-heading p-0 fs-18"><IoClose /></button>
             </div>
             <nav>
                 <ul>
@@ -86,11 +89,11 @@ export default function LeftSidebar() {
                 </ul>
             </nav>
             <div className="dashboard-menu-bottom mt-auto">
-                <Link className="d-flex align-items-center btn bg-primary fs-6 position-relative z-1">
+                <Link className="d-flex align-items-center justify-content-center btn bg-primary fs-6 position-relative z-1 rounded-pill">
                     <span className="circle d-flex align-items-center justify-content-center rounded-pill position-absolute top-50 start-0 translate-middle-y border border-2 border-primary">
                         <HiOutlinePlus />
                     </span>
-                    <span className='d-block ms-auto'>New Strategy</span>
+                    <span className='d-block'>New Strategy</span>
                 </Link>
             </div>
         </div>

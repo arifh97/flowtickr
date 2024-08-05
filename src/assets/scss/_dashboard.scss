@@ -1,16 +1,37 @@
 .dashboard {
     background-color: $bgGray;
     --d-left: 240px;
+    &-toggleBtn {
+        --width: 40px;
+        width: var(--width);
+        height: var(--width);
+    }
     &-left {
         width: var(--d-left);
         flex: 0 0 auto;
         border-right: 1px solid $border;
         padding: 30px 16px;
         padding-top: 0;
+        @include sm {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9;
+            background-color: $bgGray;
+            transform: translateX(-100%);
+            @include transition;
+            &.showSidebar {
+                transform: translateX(0);
+            }
+        }
     }
     &-right {
         width: calc(100% - var(--d-left));
         flex: 0 0 auto;
+        @include sm {
+            width: 100%;
+        }
     }
     &-logo {
         padding: 10px;
@@ -52,6 +73,23 @@
     &-topBar {
         padding: 10px 30px;
         border-bottom: 1px solid $border;
+        @include lg {
+            padding: 1rem 30px;
+        }
+        @include md {
+            padding: 1rem 20px;
+        }
+        @include sm {
+            padding: 10px 1rem;
+            background-color: $heading;
+        }
+        & .ms-auto {
+            @include sm {
+                margin-left: 0 !important;
+                width: 100% !important;
+                justify-content: flex-start !important;
+            }
+        }
         &-search {
             min-width: 225px;
             & input {
@@ -67,6 +105,10 @@
             border: 1px solid transparent;
             cursor: pointer;
             @include transition;
+            @include sm {
+                --bs-bg-opacity: .10;
+                color: $white;
+            }
             &:hover {
                 border-color: $primary;
                 background-color: rgba($color: #EB5757, $alpha: .12) !important;
@@ -102,19 +144,83 @@
     &-main {
         padding: 30px;
         --height: 72px;
-        max-height: calc(100vh - var(--height));
+        height: calc(100vh - var(--height));
         @include md {
             padding: 24px;
+        }
+        @include sm {
+            padding: 24px;
+            height: auto;
+            min-height: calc(100vh - 120px);
         }
     }
 }
 
 .profile {
     &-btn {
-        &:hover {
-            border-color: $primary;
-            background-color: rgba($color: #EB5757, $alpha: .12) !important;
+        padding: 4px 5px;
+        border: 1px solid transparent;
+        @include sm {
+            --bs-bg-opacity: .10;
         }
-        & .img {}
+        &.show {
+            background-color: rgba($color: $primary, $alpha: .10) !important;
+            border-color: $primary;
+            & svg {
+                color: $primary;
+            }
+        }
+        // &:hover {
+        //     background-color: rgba($color: #EB5757, $alpha: .12) !important;
+        // }
+        & svg {
+            color: $text;
+            @include sm {
+                color: $text;
+            }
+        }
+        & .img {
+            --width: 28px;
+            width: var(--width);
+            height: var(--width);
+            border-radius: 100%;
+            @include img(cover);
+        }
+    }
+    &-dropdown {
+        border-radius: 0px 0px 16px 16px;
+        border: 1px solid $primary;
+        background-color: $white;
+        box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.12);
+        width: calc(100% - 30px);
+        padding: 16px 20px;
+        @include sm {
+            padding: 14px;
+            width: 80px;
+        }
+        & li {
+            &:first-child {
+                & a {
+                    padding-top: 0;
+                }
+            }
+            &:last-child {
+                & a {
+                    padding-bottom: 0;
+                    border-bottom: none;
+                }
+            }
+            & a {
+                color: $heading;
+                padding: 16px 0px;
+                border-bottom: 1px solid $border;
+                @include sm {
+                    padding: 10px 0;
+                }
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
     }
 }

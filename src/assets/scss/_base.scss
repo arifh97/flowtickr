@@ -113,6 +113,9 @@ input[type=number] {
         border-radius: 12px;
         min-height: 185px;
         overflow: hidden;
+        @include sm {
+            min-height: 145px;
+        }
         &-img {
             max-height: 100%;
         }
