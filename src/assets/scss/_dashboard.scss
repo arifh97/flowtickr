@@ -103,6 +103,7 @@
         padding: 30px;
         --height: 72px;
         max-height: calc(100vh - var(--height));
+        overflow: auto;
         @include md {
             padding: 24px;
         }

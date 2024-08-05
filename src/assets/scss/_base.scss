@@ -73,6 +73,7 @@ input[type=number] {
     --bs-btn-font-size: 12px;
     --bs-btn-border-radius: 8px;
     --bs-btn-font-weight: 500;
+    gap: 10px;
     cursor: pointer;
     &:hover {
         background-color: $primary !important;
