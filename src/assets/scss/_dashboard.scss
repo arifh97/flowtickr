@@ -156,8 +156,7 @@
         }
         @include sm {
             padding: 20px 16px;
-            height: auto;
-            min-height: calc(100vh - 120px);
+            max-height: calc(100vh - 120px);
         }
     }
 }
