@@ -9,8 +9,8 @@
         --gap24: 16px;
     }
     @include mmd {
-        --gap24: 16px;
-        --gap16: 10px;
+        --gap24: 20px;
+        --gap16: 16px;
     }
     & .btn {
         --bs-btn-border-color: #EAEAEA;
@@ -19,6 +19,10 @@
         & img {
             max-width: none;
             width: 100%;
+            border-radius: 12px;
+            @include mmd {
+                height: 116px;
+            }
         }
     }
     &-graph {
@@ -32,6 +36,8 @@
             flex-direction: column;
             gap: var(--gap16);
             @include mmd {
+                flex-direction: row;
+                flex-wrap: wrap;
                 width: 100%;
             }
             & .single {
@@ -44,6 +50,7 @@
                 }
                 @include mmd {
                     padding: 10px;
+                    width: calc(50% - 8px);
                 }
                 & .icon {
                     --size: 38px;
@@ -53,6 +60,9 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    @include mmd {
+                        flex: 0 0 auto;
+                    }
                 }
                 & .text {
                     & p {
@@ -71,6 +81,9 @@
             & .btn {
                 font-size: 16px;
                 color: $heading;
+                @include mmd {
+                    width: calc(50% - 8px);
+                }
             }
         }
         &-header {

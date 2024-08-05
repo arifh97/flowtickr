@@ -1,6 +1,10 @@
 .dashboard {
     background-color: $bgGray;
     --d-left: 240px;
+    &-mobile {
+        border-bottom: 1px solid $border;
+        background: #FFF;
+    }
     &-toggleBtn {
         --width: 40px;
         width: var(--width);
@@ -159,10 +163,10 @@
             background: $text;
         }
         @include md {
-            padding: 24px;
+            padding: 20px 16px;
         }
         @include sm {
-            padding: 24px;
+            padding: 20px 16px;
             height: auto;
             min-height: calc(100vh - 120px);
         }
