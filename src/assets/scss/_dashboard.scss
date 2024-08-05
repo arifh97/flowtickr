@@ -104,6 +104,18 @@
         --height: 72px;
         max-height: calc(100vh - var(--height));
         overflow: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            background: $primary;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $secondary;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: $text;
+        }
         @include md {
             padding: 24px;
         }

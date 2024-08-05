@@ -133,7 +133,7 @@ export default function Home() {
           <h3 id="title">Profitability Strategies</h3>
           <div className="profile-profit-cards d-flex flex-wrap">
             {profitCard.map((item, index) => (
-              <div className="profile-profit-card" key={index}>
+              <div className="profile-profit-card " key={index}>
                 <span className="subTitle">Subscribed</span>
                 <h4>{item.title}</h4>
                 <p>{item.des}</p>

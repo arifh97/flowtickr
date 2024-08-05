@@ -104,6 +104,7 @@
             box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
             padding: var(--gap16);
             max-width: 265px;
+            // max-width: calc(265px - var(--gap16));
             @include xxxl {
                 max-width: 19.17%;
             }
