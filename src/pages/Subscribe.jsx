@@ -19,6 +19,7 @@ export default function Subscribe() {
       title: "Plan Name",
       des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
       price: "100.99",
+      popular: "Popular",
       details: [
         "Amet minim mollit non deserunt.",
         "Amet minim mollit non deserunt.",
@@ -53,22 +54,37 @@ export default function Subscribe() {
       </div>
       <div className="subscribe-items">
         <Row>
-          <Col xs={12} lg={6} xl={3} className="subscribe-items-cards">
-            <div className="subscribe-items-cards-card">
-              <div className="card-body">
-                <p className="title">Plan Name</p>
-                <p className="des" >Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.</p>
-                <p className="price">$100.99 <span>/yearly</span></p>
-              </div>
-              <li className="d-flex align-items-center gap-1">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.3333 4.66666L6.66666 11.3333L3.33333 7.99999" stroke="#19C725" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                Amet minim mollit non deserunt.
-              </li>
-              <a href="#">Subscribe now</a>
-            </div>
-          </Col>
+          {
+            subscrinecards.map((item, idx) => (
+              <Col xs={12} lg={6} xl={4} key={idx} className="mb-3 mb-xl-0">
+                <div className={`subscribe-items-card p-3`}>
+                  {
+                    item.popular &&
+                    <div className="d-flex justify-content-end">
+                      <p className="popular fs-14 font-medium text-center" >{item.popular}</p>
+                    </div>
+                  }
+                  <div className="card-body mb-3">
+                    <p className="title mb-1 fs-16 fw-medium ">{item.title}</p>
+                    <p className="des fs-14 fw-normal mb-2" >{item.des}</p>
+                    <p className="price fw-normal fs-14"><span className="fw-semibold ">${item.price}</span>/yearly</p>
+                  </div>
+                  {
+                    item.details.map((itm, iddx) => (
+                      <li className="d-flex align-items-center gap-1 fs-14 fw-normal mb-2" key={iddx}>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M13.3333 4.66666L6.66666 11.3333L3.33333 7.99999" stroke="#19C725" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        {itm}
+                      </li>
+                    ))
+                  }
+                  <a href="#" className={`btn mt-3 w-100 text-center ${idx==1 && "bg-primary"} `}>Subscribe now</a>
+                </div>
+              </Col>
+              
+            ))
+          } 
         </Row>
       </div>
     </div>
