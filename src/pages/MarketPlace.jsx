@@ -247,7 +247,7 @@ export default function MarketPlace() {
     },
   ]
   return (
-    <div className='marketplace'>
+    <div className='dashboard-wrap marketplace'>
       <div className="marketplace-header mb-3 mb-md-4 d-flex align-items-center justify-content-between">
         <p>Marketplace</p>
         <div className='input-item position-relative z-0'>

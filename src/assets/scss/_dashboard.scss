@@ -159,6 +159,12 @@
             max-height: calc(100vh - 120px);
         }
     }
+    &-wrap {
+        border-radius: 12px;
+        border: 1px solid $border;
+        background: $white;
+        padding: 16px;
+    }
 }
 
 .profile {
