@@ -90,12 +90,9 @@
                         .values {
                             .price {
                                 color: $heading2;
-                                font-size: 16px;
-                                font-weight: 600;
                             }
                             p {
                                 color: $text;
-                                font-size: 14px;
                             }
                         }
                     }
@@ -106,12 +103,11 @@
                         border-radius: 8px;
                         background: #4DD5B8;
                         color: $heading2;
-                        font-size: 14px;
-                        font-weight: 500;
-                        padding: 10px 0;
+                        padding: 12px 0;
                         width: 95%;
                         &:hover {
-                            opacity: .7;
+                            // opacity: .7;
+                            color: $white;
                         }
                     }
                     .wish {
