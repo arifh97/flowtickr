@@ -1,0 +1,186 @@
+.marketplace {
+    border: 1px solid #EAEAEA;
+    border-radius: 12px;
+    padding: 16px;
+    &-header {
+        p {
+            color: $heading2;
+            @include font-16;
+            font-weight: 700;
+        }
+        .input-item {
+            border-radius: 8px;
+            background: $bgGray !important;
+            input {
+                border-radius: 8px;
+                background: $bgGray !important;
+                color: #8E8F95;
+                font-size: 12px;
+                font-weight: 400;
+            }
+            span {
+                left: 5px;
+                top: 10px;
+            }
+            .filter {
+                right: 5px;
+                top: 10px;
+                border-radius: 8px;
+                background: #FF823C;
+                padding: 8px;
+                --width: 30px;
+                height: var(--width);
+                height: var(--width);
+                flex: 0 0 auto;
+                margin-top: 0;
+            }
+        }
+    }
+    &-items {
+        &-cards {
+            &-card {
+                padding: 16px;
+                border-radius: 12px;
+                background: $white;
+                box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+                height: 100%;
+                width: 100%;
+                .title {
+                    color: $heading2;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 150%;
+                }
+                .des {
+                    color: $text;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 150%;
+                    width: 70%;
+                    @include lg {
+                        width: 100%;
+                    }
+                    @include mmd {
+                        width: 100%;
+                    }
+                    span {
+                        color: $secondary;
+                        font-weight: 600;
+                    }
+                }
+                .card-history {
+                    .month {
+                        color: $heading2;
+                        font-size: 12px;
+                        font-weight: 500;
+                        border-radius: 8px;
+                        background: rgba(77, 213, 184, 0.20);
+                        padding: 2px 8px;
+                    }
+                    .live {
+                        color: #FFBA00;
+                        font-size: 12px;
+                        font-weight: 500;
+                        border-radius: 8px;
+                        background: rgba(255, 200, 51, 0.10);
+                        padding: 2px 8px;
+                    }
+                }
+                .all-valur-history {
+                    .total-value {
+                        border-radius: 8px;
+                        background: $bgGray;
+                        .image-area {
+                            border-radius: 8px;
+                            background: $white;
+                            padding: 11px;
+                            img {
+                                --width: 21px;
+                                width: var(--width);
+                                height: var(--width);
+                                flex: 0 0 auto;
+                            }
+                        }
+                        .values {
+                            .price {
+                                color: $heading2;
+                                font-size: 14px;
+                                font-weight: 600;
+                            }
+                            p {
+                                color: $text;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+                .btns {
+                    gap: 10px;
+                    a {
+                        border-radius: 8px;
+                        background: #4DD5B8;
+                        color: $heading2;
+                        font-size: 12px;
+                        font-weight: 500;
+                        padding: 10px 0;
+                        width: 95%;
+                        &:hover {
+                            opacity: .7;
+                        }
+                    }
+                    .wish {
+                        border-radius: 8px;
+                        border: 1px solid #EAEAEA;
+                        background: $white;
+                        padding: 10px;
+                        &:hover {
+                            svg {
+                                color: $black;
+                            }
+                        }
+                        svg {
+                            --width: 18px;
+                            height: var(--width);
+                            width: var(--width);
+                            flex: 0 0 auto;
+                            color: #FF823C;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-pagination {
+        .value {
+            border-radius: 8px;
+            border: 1px solid #EAEAEA;
+            background: $white;
+            padding: 10px;
+            cursor: pointer;
+            svg {
+                --width: 16px;
+                height: var(--width);
+                width: var(--width);
+            }
+        }
+        .value-item {
+            border-radius: 8px;
+            border: 1px solid #EAEAEA;
+            background: $white;
+            padding: 10px 12px;
+            cursor: pointer;
+            span {
+                color: #8E8F95;
+                font-size: 13px;
+                font-weight: 600;
+                line-height: normal;
+            }
+        }
+        .value-bg {
+            background-color: #4DD5B8;
+            span {
+                color: $white;
+            }
+        }
+    }
+}
