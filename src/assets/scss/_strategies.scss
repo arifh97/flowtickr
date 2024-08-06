@@ -72,13 +72,103 @@
             }
         }
     }
-    & #title {}
     & .grid-view {
         &>div {
             &:not(:last-child) {
                 padding-bottom: 24px;
                 margin-bottom: 24px;
                 border-bottom: 1px solid $border;
+            }
+        }
+    }
+    & .list-view {
+        &>div {
+            border-radius: 12px;
+            border: 1px solid $border;
+        }
+        & .lists {
+            &-list {
+                box-shadow: 0 0 0;
+                border-radius: 0;
+                max-width: none;
+                padding: 14px 0;
+                & #menu {
+                    --size: 30px;
+                    width: var(--size);
+                    height: var(--size);
+                    border-radius: 100%;
+                    border: 1px solid $border;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @include transition;
+                    &:hover {
+                        background-color: $black !important;
+                        & svg {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        & .table {
+            &> :not(caption)>*>* {
+                padding: 0 !important;
+            }
+            & .tr {
+                border-bottom: 1px solid #EAEAEA;
+                &:first-child {
+                    background: $bgGray;
+                }
+            }
+            & .th {
+                padding: 14px 8px;
+                & svg {
+                    padding: 0 !important;
+                    color: $text;
+                    background: $bgGray;
+                }
+            }
+            & .td,
+            .th {
+                background-color: transparent;
+                text-align: left;
+                border: none;
+                &:first-child {
+                    width: 27.23%;
+                }
+                &:nth-child(2) {
+                    width: 27.23%;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 2;
+                    @include xxl {}
+                    @include xl {}
+                    @include lg {}
+                    @include mmd {}
+                }
+                &:nth-child(3) {
+                    width: 11.05%;
+                }
+                &:nth-child(4) {
+                    width: 11.05%;
+                    @include lg {}
+                    @include md {}
+                }
+                &:nth-child(5) {
+                    width: 17.56%;
+                    @include lg {}
+                }
+                &:nth-child(6) {
+                    width: 5.76%;
+                    @include xxl {}
+                    @include xl {}
+                    @include lg {}
+                    @include mmd {}
+                    @include sm {}
+                }
             }
         }
     }
