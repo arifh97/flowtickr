@@ -169,15 +169,12 @@
             }
             & h4 {
                 color: $heading2;
-                @include font-14;
-                font-weight: 500;
-                margin-bottom: 12px;
+                font-size: 16px;
                 @include mmd {
                     margin-bottom: 8px;
                 }
             }
             & p {
-                @include font-12;
                 margin-bottom: 16px;
             }
             & .card-btn {

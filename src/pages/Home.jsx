@@ -134,9 +134,9 @@ export default function Home() {
           <div className="profile-profit-cards d-flex flex-wrap">
             {profitCard.map((item, index) => (
               <div className="profile-profit-card " key={index}>
-                <span className="subTitle">Subscribed</span>
-                <h4>{item.title}</h4>
-                <p>{item.des}</p>
+                <span className="subTitle fs-12">Subscribed</span>
+                <h4 className='mb-2 pb-1 lh-base fw-medium'>{item.title}</h4>
+                <p className='fs-14 lh-base'>{item.des}</p>
                 <div className="card-btn">
                   <a href="#" className="btn">Run Strategy</a>
                   <button id="menu"><img src={threeDot} alt="" /></button>
