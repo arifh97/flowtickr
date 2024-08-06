@@ -56,14 +56,14 @@ export default function Subscribe() {
         <Row>
           {
             subscrinecards.map((item, idx) => (
-              <Col xs={12} lg={6} xl={4} key={idx}>
-                <div className="subscribe-items-card p-3">
-                 {
-                  item.popular &&  
-                  <div className="d-flex justify-content-end">
-                  <p className="popular fs-14 font-medium text-center" >{item.popular}</p>
-                </div>
-                 }
+              <Col xs={12} lg={6} xl={4} key={idx} className="mb-3 mb-xl-0">
+                <div className={`subscribe-items-card p-3`}>
+                  {
+                    item.popular &&
+                    <div className="d-flex justify-content-end">
+                      <p className="popular fs-14 font-medium text-center" >{item.popular}</p>
+                    </div>
+                  }
                   <div className="card-body mb-3">
                     <p className="title mb-1 fs-16 fw-medium ">{item.title}</p>
                     <p className="des fs-14 fw-normal mb-2" >{item.des}</p>
@@ -79,9 +79,10 @@ export default function Subscribe() {
                       </li>
                     ))
                   }
-                  <a href="#" className="btn mt-3 w-100 text-center ">Subscribe now</a>
+                  <a href="#" className={`btn mt-3 w-100 text-center ${idx==1 && "bg-primary"} `}>Subscribe now</a>
                 </div>
               </Col>
+              
             ))
           }
         </Row>
