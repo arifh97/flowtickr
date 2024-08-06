@@ -78,41 +78,59 @@ export default function Strategies() {
           </div>
           <div className="grid-view">
             <div className="createdByMe">
-              <h3 id="title">Created By Me</h3>
+              <h3 id="title" className='text-heading fs-16 fw-bold lh-base mt-4 mb-3'>Created By Me</h3>
               <div className="profile-profit-cards d-flex flex-wrap">
                 {profitCard.map((item, index) => (
-                  <div className="profile-profit-card " key={index}>
-                    <span className="subTitle">Subscribed</span>
-                    <h4>{item.title}</h4>
-                    <p>{item.des} <a href="#" className='read'> {item.read_more}</a></p>
-                    <div className='d-flex create'><span>{item.create_date}</span> <span>{item.live_development}</span></div>
+                  <div className="profile-profit-card bg-white" key={index}>
+                    <span className="subTitle fs-12">Subscribed</span>
+                    <h4 className='mb-2 pb-1 fs-16 lh-base fw-medium'>{item.title}</h4>
+                    <p className='fs-14 mb-2 pb-2 lh-base'>{item.des} <a href="#" className='read'> {item.read_more}</a></p>
+                    <div className='d-flex create'><span className='fs-12 lh-base fw-medium text-heading'>{item.create_date}</span> <span className='fs-12 lh-base fw-medium '>{item.live_development}</span></div>
                     <div className="card-btn">
                       <a href="#" className="btn">Run Strategy</a>
-                      <button id="menu"><img src={threeDot} alt="" /></button>
+                      <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><img src={threeDot} alt="" /></button>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
             <div className="fromMarketplace">
-              <h3 id="title">From Marketplace</h3>
+              <h3 id="title" className='text-heading fs-16 fw-bold lh-base mb-3'>From Marketplace</h3>
               <div className="profile-profit-cards d-flex flex-wrap">
                 {profitCard.map((item, index) => (
-                  <div className="profile-profit-card " key={index}>
-                    <span className="subTitle">Subscribed</span>
-                    <h4>{item.title}</h4>
-                    <p>{item.des} <a href="#" className='read'> {item.read_more}</a></p>
-                    <div className='d-flex create'><span>{item.create_date}</span> <span>{item.live_development}</span></div>
+                  <div className="profile-profit-card bg-white" key={index}>
+                    <span className="subTitle fs-12">Subscribed</span>
+                    <h4 className='mb-2 pb-1 fs-16 lh-base fw-medium'>{item.title}</h4>
+                    <p className='fs-14 mb-2 pb-2 lh-base'>{item.des} <a href="#" className='read'> {item.read_more}</a></p>
+                    <div className='d-flex create'><span className='fs-12 lh-base fw-medium text-heading'>{item.create_date}</span> <span className='fs-12 lh-base fw-medium '>{item.live_development}</span></div>
                     <div className="card-btn">
                       <a href="#" className="btn">Run Strategy</a>
-                      <button id="menu"><img src={threeDot} alt="" /></button>
+                      <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><img src={threeDot} alt="" /></button>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-          <div className="list-view"></div>
+          <div className="list-view">
+            <div className="createdByMe">
+              <h3 id="title" className='text-heading fs-16 fw-bold lh-base mt-4 mb-3'>Created By Me</h3>
+              <div className="profile-profit-lists d-flex flex-wrap">
+                {profitCard.map((item, index) => (
+                  <div className="profile-profit-list bg-white" key={index}>
+                    <span className="subTitle fs-12">Subscribed</span>
+                    <h4 className='mb-2 pb-1 fs-16 lh-base fw-medium'>{item.title}</h4>
+                    <p className='fs-14 mb-2 pb-2 lh-base'>{item.des} <a href="#" className='read'> {item.read_more}</a></p>
+                    <div className='d-flex create'><span className='fs-12 lh-base fw-medium text-heading'>{item.create_date}</span> <span className='fs-12 lh-base fw-medium '>{item.live_development}</span></div>
+                    <div className="card-btn">
+                      <a href="#" className="btn">Run Strategy</a>
+                      <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><img src={threeDot} alt="" /></button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

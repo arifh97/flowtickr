@@ -112,16 +112,16 @@ export default function Home() {
                   <img src={item.icon} alt="" />
                 </div>
                 <div className="text">
-                  <p>{item.title}</p>
-                  <span>{item.num} </span>
+                  <p className='fs-12 lh-base fw-medium mb-2'>{item.title}</p>
+                  <span className='text-heading fw-semibold'>{item.num} </span>
                 </div>
               </div>
             ))}
-            <a href="#" className="btn">View Watchlist</a>
+            <a href="#" className="btn d-inline-flex align-items-center justify-content-center">View Watchlist</a>
           </div>
           <div className="profile-graph-wrap">
             <div className="profile-graph-header d-flex align-items-center justify-content-between">
-              <h4>PNL</h4>
+              <h4 className='fs-16 lh-base fw-bold text-heading'>PNL</h4>
               <button className="btn"> <img src={calendar} alt="" /> Last week</button>
             </div>
             <div className="graph">
@@ -129,17 +129,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="profile-profit">
-          <h3 id="title">Profitability Strategies</h3>
+        <div className="profile-profit d-flex flex-column bg-white">
+          <h3 id="title" className='text-heading fs-16 fw-bold lh-base'>Profitability Strategies</h3>
           <div className="profile-profit-cards d-flex flex-wrap">
             {profitCard.map((item, index) => (
-              <div className="profile-profit-card " key={index}>
+              <div className="profile-profit-card bg-white" key={index}>
                 <span className="subTitle fs-12">Subscribed</span>
-                <h4 className='mb-2 pb-1 lh-base fw-medium'>{item.title}</h4>
-                <p className='fs-14 lh-base'>{item.des}</p>
+                <h4 className='mb-2 pb-1 fs-16 lh-base fw-medium'>{item.title}</h4>
+                <p className='fs-14 mb-2 pb-2 lh-base'>{item.des}</p>
                 <div className="card-btn">
                   <a href="#" className="btn">Run Strategy</a>
-                  <button id="menu"><img src={threeDot} alt="" /></button>
+                  <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><img src={threeDot} alt="" /></button>
                 </div>
               </div>
             ))}

@@ -60,13 +60,10 @@
             gap: 8px;
             margin-bottom: 16px;
             & span {
-                @include font-12;
-                font-weight: 500;
                 border-radius: 8px;
                 padding: 2px 8px;
                 &:first-child {
                     background: rgba(77, 213, 184, 0.20);
-                    color: $heading2;
                 }
                 &:nth-child(2) {
                     color: #FFBA00;
@@ -75,9 +72,7 @@
             }
         }
     }
-    & #title {
-        margin-bottom: 16px;
-    }
+    & #title {}
     & .grid-view {
         &>div {
             &:not(:last-child) {
