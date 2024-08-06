@@ -7,6 +7,7 @@ import icon4 from "../assets/img/marketicon4.png"
 import icon5 from "../assets/img/marketicon5.png"
 import icon6 from "../assets/img/marketicon5.png"
 import { Link } from 'react-router-dom'
+import Pagination from 'react-bootstrap/Pagination';
 
 
 export default function MarketPlace() {
@@ -249,9 +250,9 @@ export default function MarketPlace() {
   return (
     <div className='marketplace'>
       <div className="marketplace-header mb-3 mb-md-4 d-flex align-items-center justify-content-between">
-        <p>Marketplace</p>
+        <p className='fs-16 fw-bold' >Marketplace</p>
         <div className='input-item position-relative z-0'>
-          <input type="text" name="" id="" placeholder='Search' />
+          <input className='fz-14 fw-normal' type="text" name="" id="" placeholder='Search' />
           <span className='position-absolute z-1 '>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15.75 15.75L12.4927 12.4927M12.4927 12.4927C13.0499 11.9356 13.4919 11.2741 13.7934 10.5461C14.0949 9.81816 14.2501 9.03792 14.2501 8.24997C14.2501 7.46202 14.0949 6.68178 13.7934 5.95381C13.4919 5.22584 13.0499 4.56439 12.4927 4.00722C11.9356 3.45006 11.2741 3.00809 10.5461 2.70655C9.81816 2.40502 9.03792 2.24982 8.24997 2.24982C7.46202 2.24982 6.68178 2.40502 5.95381 2.70655C5.22584 3.00809 4.56439 3.45006 4.00722 4.00722C2.88197 5.13247 2.24982 6.65863 2.24982 8.24997C2.24982 9.84131 2.88197 11.3675 4.00722 12.4927C5.13247 13.618 6.65863 14.2501 8.24997 14.2501C9.84131 14.2501 11.3675 13.618 12.4927 12.4927Z" stroke="#8E8F95" stroke-linecap="round" stroke-linejoin="round" />
@@ -272,11 +273,11 @@ export default function MarketPlace() {
             marketplacecards.map((item, idx) => (
               <Col xs={12} lg={6} xl={4} className='marketplace-items-cards mb-2 mb-md-3' key={idx}>
                 <div className="marketplace-items-cards-card">
-                  <p className='title mb-2 pb-1'>{item.title}</p>
-                  <p className='mb-2 pb-1 des'>{item.des}<span>Read More</span></p>
+                  <p className='title mb-2 pb-1 fs-16 fw-medium '>{item.title}</p>
+                  <p className='mb-2 pb-1 des fs-14 fw-normal'>{item.des}<span>Read More</span></p>
                   <div className="card-history mb-3 d-flex align-items-center gap-2">
-                    <p className='month'>Created: {item.time}</p>
-                    <p className='live'>Live development: {item.live}</p>
+                    <p className='month fs-14 fw-medium '>Created: {item.time}</p>
+                    <p className='live fs-14 fw-medium'>Live development: {item.live}</p>
                   </div>
                   <Row className="all-valur-history mb-3">
                     {
@@ -309,38 +310,20 @@ export default function MarketPlace() {
           }
         </Row>
       </div>
-      <div className="marketplace-pagination d-flex align-items-center gap-1 justify-content-center">
-        <div className="value">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.7266 12L12.6666 11.06L9.61329 8L12.6666 4.94L11.7266 4L7.72663 8L11.7266 12Z" fill="#8E8F95" />
-            <path d="M11.7266 12L12.6666 11.06L9.61329 8L12.6666 4.94L11.7266 4L7.72663 8L11.7266 12Z" fill="black" fill-opacity="0.2" />
-            <path d="M7.33332 12L8.27332 11.06L5.21998 8L8.27331 4.94L7.33331 4L3.33332 8L7.33332 12Z" fill="#8E8F95" />
-            <path d="M7.33332 12L8.27332 11.06L5.21998 8L8.27331 4.94L7.33331 4L3.33332 8L7.33332 12Z" fill="black" fill-opacity="0.2" />
-          </svg>
-        </div>
-        <div className="value">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.06 12L11 11.06L7.94667 8L11 4.94L10.06 4L6.06 8L10.06 12Z" fill="#151B22" />
-          </svg>
-        </div>
-        {
-          pagination.map((item, idx) => (
-            <div className={`value-item ${idx == value ? "value-bg" : ""}`} key={idx} onClick={() => setvalue(idx)}><span>{item}</span></div>
-          ))
-        }
-        <div className="value">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6.94 4L6 4.94L9.05333 8L6 11.06L6.94 12L10.94 8L6.94 4Z" fill="#151B22" />
-          </svg>
-        </div>
-        <div className="value">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4.27331 4L3.33331 4.94L6.38665 8L3.33331 11.06L4.27331 12L8.27331 8L4.27331 4Z" fill="#151B22" />
-            <path d="M8.66668 4L7.72668 4.94L10.78 8L7.72668 11.06L8.66668 12L12.6667 8L8.66668 4Z" fill="#151B22" />
-          </svg>
+     <div className='marketplace-pagination d-flex justify-content-center'>
+     <Pagination>
+        <Pagination.First />
+        <Pagination.Prev />
+        <Pagination.Item>{1}</Pagination.Item>
+        <Pagination.Item>{2}</Pagination.Item>
+        <Pagination.Item>{3}</Pagination.Item>
 
-        </div>
-      </div>
+        <Pagination.Ellipsis />
+        <Pagination.Item>{10}</Pagination.Item>
+        <Pagination.Next />
+        <Pagination.Last />
+      </Pagination>
+     </div>
     </div>
   )
 }

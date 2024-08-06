@@ -56,7 +56,7 @@ export default function Subscribe() {
           <Col xs={12} lg={6} xl={3} className="subscribe-items-cards">
             <div className="subscribe-items-cards-card">
               <div className="card-body">
-                <p className="title">Plan Name</p>
+                <p className="title fs-3">Plan Name</p>
                 <p className="des" >Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.</p>
                 <p className="price">$100.99 <span>/yearly</span></p>
               </div>
