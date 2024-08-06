@@ -121,7 +121,7 @@ export default function Home() {
           </div>
           <div className="profile-graph-wrap">
             <div className="profile-graph-header d-flex align-items-center justify-content-between">
-              <h4 className='fs-16 lh-base fw-bold text-heading'>PNL</h4>
+              <h4 className='fs-6 lh-base fw-bold text-heading'>PNL</h4>
               <button className="btn"> <img src={calendar} alt="" /> Last week</button>
             </div>
             <div className="graph">
@@ -130,12 +130,12 @@ export default function Home() {
           </div>
         </div>
         <div className="profile-profit d-flex flex-column bg-white">
-          <h3 id="title" className='text-heading fs-16 fw-bold lh-base'>Profitability Strategies</h3>
+          <h3 id="title" className='text-heading fs-6 fw-bold lh-base'>Profitability Strategies</h3>
           <div className="profile-profit-cards d-flex flex-wrap">
             {profitCard.map((item, index) => (
               <div className="profile-profit-card bg-white" key={index}>
                 <span className="subTitle fs-12">Subscribed</span>
-                <h4 className='mb-2 pb-1 fs-16 lh-base fw-medium'>{item.title}</h4>
+                <h4 className='mb-2 pb-1 fs-6 lh-base fw-medium'>{item.title}</h4>
                 <p className='fs-14 mb-2 pb-2 lh-base'>{item.des}</p>
                 <div className="card-btn">
                   <a href="#" className="btn">Run Strategy</a>
