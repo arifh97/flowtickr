@@ -1,0 +1,26 @@
+.subscribe {
+    background-color: $white;
+    border-radius: 16px;
+    padding: 24px;
+    &-heading {
+        span {
+            width: 40px;
+            height: 40px;
+            border-radius: 37px;
+            background: $bgGray;
+            padding: 11px;
+        }
+        p {
+            color: $heading2;
+            @include font-18;
+            font-weight: 600;
+        }
+    }
+    &-items {
+        &-cards {
+            &-card {
+                .card-body {}
+            }
+        }
+    }
+}

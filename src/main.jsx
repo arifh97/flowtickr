@@ -12,6 +12,7 @@ import Strategies from './pages/Strategies'
 import Contact from './pages/Contact'
 import Marketplace from './pages/MarketPlace'
 import Profile from './pages/Profile'
+import Subscribe from './pages/Subscribe'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: '/profile',
         element:<Profile />
+      },
+      {
+        path: '/subscribe',
+        element:<Subscribe/>
       },
     ]
   },
