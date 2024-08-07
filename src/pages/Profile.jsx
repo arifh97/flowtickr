@@ -21,7 +21,7 @@ export default function Profile() {
       >
         <Tab eventKey="My Profile" title="My Profile">
           <Row>
-            <Col xs={12} md={6} >
+            <Col xs={12} lg={6}  className='mb-4 mb-lg-0' >
               <div className="profile-details">
                 <div className='position-relative z-0'>
                   <div className='position-relative z-0'>
@@ -61,16 +61,16 @@ export default function Profile() {
                 </div>
               </div>
             </Col>
-            <Col xs={12} md={6} >
+            <Col xs={12} lg={6} >
               <div className="profile-social">
                 <p className='title fw-medium mb-3'>Social Networks</p>
                 <div className="social">
-                  <FormBox className='mb-2 pb-1' label="Facebook" placeholder="facebook.com/" />
-                  <FormBox className='mb-2 pb-1' label="Twitter" placeholder="twitter.com/" />
-                  <FormBox className='mb-2 pb-1' label="Instagram" placeholder="instagram.com/" />
-                  <FormBox className='mb-2 pb-1' label="Linkdin" placeholder="Linkdin.com/" />
+                  <FormBox className='mb-3' label="Facebook" placeholder="facebook.com/" />
+                  <FormBox className='mb-3' label="Twitter" placeholder="twitter.com/" />
+                  <FormBox className='mb-3' label="Instagram" placeholder="instagram.com/" />
+                  <FormBox className='mb-3' label="Linkdin" placeholder="Linkdin.com/" />
                 </div>
-                <button className='btn bg-primaryfw-medium'>Save</button>
+                <button className='btn bg-primary fw-medium'>Save</button>
               </div>
             </Col>
           </Row>

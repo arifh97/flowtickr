@@ -14,6 +14,15 @@
             max-width: 100%;
             border-radius: 12px;
             margin-bottom: 114px;
+            @include xl{
+                margin-bottom: 84px;
+            }
+            @include lg{
+                margin-bottom: 65px;
+            }
+            @include mmd{
+                margin-bottom: 60px;
+            }
             img{
                 border-radius: 12px;
                 height: 100%;
@@ -22,6 +31,18 @@
         }
         .profile-area{
             bottom: -64%;
+            @include xxl{
+                bottom: -88%;
+            }
+            @include xl{
+                bottom: -88%;
+            }
+            @include lg{
+                bottom: -105%;
+            }
+            @include mmd{
+                bottom: -72%;
+            }
         }
         .upload-banner{
             --width:40px;
@@ -33,6 +54,10 @@
             background-color: $white;
             border-radius: 50%;
             cursor: pointer;
+            @include sm{
+                bottom: -30px;
+                padding: 10px;
+            }
             img{
                 width: 100%;
                 height: 100%;
@@ -43,6 +68,21 @@
             --width:147px;
             width: var(--width);
             height: var(--width);
+            @include xl{
+                --width: 124px;
+            }
+            @include lg{
+                --width: 100px;
+            }
+            @include mmd{
+                --width: 105px;
+            }
+            @include sm{
+                --width: 86px;
+            }
+            // @include mmd{
+            //     --width: 100px;
+            // }
             img{
                 width: 100%;
                 height: 100%;
@@ -50,7 +90,6 @@
             }
         }
         .profile-edit {
-
             --width:40px;
             width: var(--width);
             height: var(--width);
@@ -58,6 +97,16 @@
             border-radius: 50%;
             bottom: -35px;
             cursor: pointer;
+            @include lg{
+                --width: 34px;
+                padding: 9px;
+
+            }
+            @include sm{
+                --width: 30px;
+                padding: 8px;
+                bottom: -30px;
+            }
             
         }
 
@@ -97,6 +146,9 @@
             color: $heading2 !important;
             padding: 10px 85px;
             font-size: 16px !important;
+            @include sm{
+                width: 100%;
+            }
         }
 
     }
