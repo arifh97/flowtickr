@@ -13,6 +13,7 @@ import Contact from './pages/Contact'
 import Marketplace from './pages/MarketPlace'
 import Profile from './pages/Profile'
 import Subscribe from './pages/Subscribe'
+import StrategiesDetails from './pages/StrategiesDetails'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: '/strategies',
         element:<Strategies/>
+      },
+      {
+        path:'/strategies-details',
+        element: <StrategiesDetails />
       },
       {
         path: '/contact',

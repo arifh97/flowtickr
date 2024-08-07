@@ -9,6 +9,7 @@ import { TfiAngleDown } from "react-icons/tfi";
 import { BsThreeDots } from "react-icons/bs";
 import { useState } from 'react';
 import { FaPlus } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 
@@ -102,7 +103,6 @@ export default function Strategies() {
               </div>
             </div>
           </div>
-
           {!isList &&
             <div className="grid-view">
               <div className="createdByMe">
@@ -115,7 +115,7 @@ export default function Strategies() {
                       <p className='fs-14 mb-2 pb-2 lh-base'>{item.des} <a href="#" className='read fw-semibold'> {item.read_more}</a></p>
                       <div className='d-flex create'><span className='fs-12 lh-base fw-medium text-heading'>Created: {item.create_date} months ago</span> <span className='fs-12 lh-base fw-medium '>Live development: {item.live_development}</span></div>
                       <div className="card-btn">
-                        <a href="#" className="btn">Run Strategy</a>
+                        <Link to="/strategies-details" className="btn">Run Strategy</Link>
                         <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><img src={threeDot} alt="" /></button>
                       </div>
                     </div>
