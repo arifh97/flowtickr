@@ -292,7 +292,7 @@ export default function Subscribe() {
               <div className="bank-cards">
                 {bankCard.map((item, index) => (
                   <label htmlFor={`bank_${index+1}`} key={index} className="card-item mb-3 d-flex align-items-center justify-content-between">
-                    <input className="d-none" checked={index===0} type="radio" name="bank" id={`bank_${index+1}`} />
+                    <input className="d-none" type="radio" name="bank" id={`bank_${index+1}`} />
                     <div className="bank-card d-flex align-items-center gap-2">
                       <div className="image">
                         <img className="p-0" src={item.icon} alt="" />
@@ -307,7 +307,7 @@ export default function Subscribe() {
                 ))}
               </div>
               <div className="d-flex flex-column gap-2 mt-4">
-                <Link to="#" className="btn bg-transparent w-100 fs-14 mb-1">
+                <Link to="#" className="btn bg-transparent w-100 fs-14 mb-1 d-flex align-items-center gap-1 justify-content-center">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6 0.9375V11.0625ZM11.0625 6H0.9375Z" fill="#151B22" />
                     <path d="M6 0.9375V11.0625M11.0625 6H0.9375" stroke="black" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
