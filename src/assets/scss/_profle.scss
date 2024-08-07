@@ -221,6 +221,53 @@
     }
 }
 
+.broken-area{
+    .tableheader{
+        background-color: #F8F8F8;
+    }
+    p.table-label {
+        color: #727277;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 14px 8px;
+    }
+    .action{
+        .edit, .delete{
+            --width:30px;
+            height: var(--width);
+            width: var(--width);
+            border-radius: 50%;
+            border: 2px solid $border;
+            background-color: transparent !important;
+            transition: 0.3s ease-in-out;
+            &:hover{
+                background-color: $black !important;
+                svg{
+                    color: $white;
+                }
+              
+            }
+            cursor: pointer;
+            svg{
+                color: #727277;
+            }
+            
+        }
+    }
+    .value{
+        font-size: 16px;
+        font-weight: 400;
+        color: $heading2;
+        padding: 14px 8px;
+    }
+    .table >  :not(caption) > * > * {
+
+
+        background-color: transparent;
+      
+    }
+}
+
 .broken-modal {
     .form-box {
         .form-label {

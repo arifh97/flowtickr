@@ -14,20 +14,20 @@ export default function Home() {
     {
       color: '#4DD5B8',
       title: 'Profit',
-      num: 45,
+      num: '45%',
       icon: listIcon_1,
 
     },
     {
       color: '#FF823C',
       title: 'Winning streak',
-      num: 12,
+      num: '12',
       icon: listIcon_2,
     },
     {
       color: '#FFC833',
       title: 'No. of days actively traded.',
-      num: 12,
+      num: '12',
       icon: listIcon_3,
     },
   ]
@@ -113,7 +113,7 @@ export default function Home() {
                   <img src={item.icon} alt="" />
                 </div>
                 <div className="text">
-                  <p className='fs-12 lh-base fw-medium mb-2'>{item.title}</p>
+                  <p className='fs-14 lh-base fw-medium mb-1'>{item.title}</p>
                   <span className='text-heading fw-semibold'>{item.num} </span>
                 </div>
               </div>

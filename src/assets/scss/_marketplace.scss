@@ -1,35 +1,27 @@
 .marketplace {
     &-header {
-        p {
-            color: $heading2;
-        }
         .input-item {
-            border-radius: 8px;
-            background: $bgGray !important;
-            input {
-                border-radius: 8px;
-                background: #F8F8F8 !important;
-                color: #8E8F95;
+            width: 255px;
+            flex: 0 0 auto;
+            @include sm {
+                width: 100%;
             }
-            span {
-                left: 5px;
-                top: 10px;
+            .form-control {
+                padding-left: 40px;
             }
             .filter {
-                right: 5px;
-                top: 10px;
                 border-radius: 8px;
-                background: #FF823C;
-                padding: 8px;
                 --width: 30px;
-                height: var(--width);
+                width: var(--width);
                 height: var(--width);
                 flex: 0 0 auto;
-                margin-top: 0;
             }
         }
     }
     &-items {
+        &-row {
+            --bs-gutter-x: 16px;
+        }
         &-cards {
             &-card {
                 padding: 16px;
@@ -61,12 +53,18 @@
                         border-radius: 8px;
                         background: rgba(77, 213, 184, 0.20);
                         padding: 2px 8px;
+                        @include sm {
+                            font-size: 12px !important;
+                        }
                     }
                     .live {
                         color: #FFBA00;
                         border-radius: 8px;
                         background: rgba(255, 200, 51, 0.10);
                         padding: 2px 8px;
+                        @include sm {
+                            font-size: 12px !important;
+                        }
                     }
                 }
                 .all-valur-history {
@@ -96,94 +94,31 @@
                 }
                 .btns {
                     gap: 10px;
+                    --f-width: 38px;
                     .btn {
-                        border-radius: 8px;
-                        background: #4DD5B8;
-                        color: $heading2;
-                        padding: 12px 0;
-                        width: 95%;
-                        &:hover {
-                            // opacity: .7;
-                            color: $white;
-                        }
+                        width: calc(100% - var(--f-width) - 10px);
                     }
                     .wish {
+                        width: var(--f-width);
+                        height: var(--f-width);
                         border-radius: 8px;
-                        border: 1px solid #EAEAEA;
-                        background: $white;
-                        padding: 10px;
-                        &:hover {
-                            svg {
-                                color: $black;
-                            }
+                        background-color: $white;
+                        color: $secondary;
+                        &:hover,
+                        &.active {
+                            background-color: $secondary;
+                            border-color: $secondary;
+                            color: $white;
                         }
-                        svg {
+                        & svg {
                             --width: 18px;
                             height: var(--width);
                             width: var(--width);
                             flex: 0 0 auto;
-                            color: #FF823C;
                         }
                     }
                 }
             }
-        }
-    }
-    &-pagination {
-        //     .value {
-        //         border-radius: 8px;
-        //         border: 1px solid #EAEAEA;
-        //         background: $white;
-        //         padding: 10px;
-        //         cursor: pointer;
-        //         svg {
-        //             --width: 16px;
-        //             height: var(--width);
-        //             width: var(--width);
-        //         }
-        //     }
-        //     .value-item {
-        //         border-radius: 8px;
-        //         border: 1px solid #EAEAEA;
-        //         background: $white;
-        //         padding: 10px 12px;
-        //         cursor: pointer;
-        //         span {
-        //             color: #8E8F95;
-        //             font-size: 16px;
-        //             font-weight: 600;
-        //             line-height: normal;
-        //         }
-        //     }
-        //     .value-bg {
-        //         background-color: #4DD5B8;
-        //         span {
-        //             color: $white;
-        //         }
-        //     }
-        // }
-        .pagination {
-            --bs-pagination-color: red !important;
-            --bs-pagination-color: red !important;
-        }
-        ul.pagination {
-            gap: 5px;
-        }
-        li.page-item {
-            padding: 5px;
-            border-radius: 8px;
-            border: 1px solid #EAEAEA;
-            background: $white;
-            // background-color: #4DD5B8;
-        }
-        .page-link {
-            border: 0;
-            color: #8E8F95;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: normal;
-            margin: 0;
-            background-color: transparent;
         }
     }
 }
