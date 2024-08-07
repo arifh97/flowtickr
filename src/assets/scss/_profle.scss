@@ -4,20 +4,43 @@
         border: 1px solid $border;
         background: $white;
         padding: 20px;
-        .image {
+
+        .image{
             max-width: 100%;
             border-radius: 12px;
             margin-bottom: 114px;
-            img {
+            @include xl{
+                margin-bottom: 84px;
+            }
+            @include lg{
+                margin-bottom: 65px;
+            }
+            @include mmd{
+                margin-bottom: 60px;
+            }
+            img{
                 border-radius: 12px;
                 height: 100%;
             }
+
         }
-        .profile-area {
+        .profile-area{
             bottom: -64%;
+            @include xxl{
+                bottom: -88%;
+            }
+            @include xl{
+                bottom: -88%;
+            }
+            @include lg{
+                bottom: -105%;
+            }
+            @include mmd{
+                bottom: -72%;
+            }
         }
-        .upload-banner {
-            --width: 40px;
+        .upload-banner{
+            --width:40px;
             width: var(--width);
             height: var(--width);
             right: 16px;
@@ -26,43 +49,74 @@
             background-color: $white;
             border-radius: 50%;
             cursor: pointer;
-            img {
+            @include sm{
+                bottom: -30px;
+                padding: 10px;
+            }
+            img{
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
             }
         }
-        .profile-img {
-            --width: 147px;
+        .profile-img{
+            --width:147px;
             width: var(--width);
             height: var(--width);
-            img {
+            @include xl{
+                --width: 124px;
+            }
+            @include lg{
+                --width: 100px;
+            }
+            @include mmd{
+                --width: 105px;
+            }
+            @include sm{
+                --width: 86px;
+            }
+            // @include mmd{
+            //     --width: 100px;
+            // }
+            img{
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
             }
         }
         .profile-edit {
-            --width: 40px;
+            --width:40px;
             width: var(--width);
             height: var(--width);
             padding: 12px;
             border-radius: 50%;
             bottom: -35px;
             cursor: pointer;
+            @include lg{
+                --width: 34px;
+                padding: 9px;
+
+            }
+            @include sm{
+                --width: 30px;
+                padding: 8px;
+                bottom: -30px;
+            }
+            
         }
-        .profile-history {
-            .form-box {
-                .form-label {
-                    font-size: 16px !important;
+
+        .profile-history{
+            .form-box{
+                .form-label{
+                    font-size: 16px !important; 
                 }
             }
-            .line {
+            .line{
                 width: 100%;
                 height: 1px;
                 background-color: $border;
             }
-            .invoice {
+            .invoice{
                 color: $heading2;
             }
         }
@@ -72,35 +126,56 @@
         border: 1px solid $border;
         background: $white;
         padding: 20px;
-        .title {
+        .title{
             font-size: 18px;
             color: $heading2;
         }
-        .social {
-            .form-box {
-                .form-label {
-                    font-size: 16px !important;
+        .social{
+            .form-box{
+                .form-label{
+                    font-size: 16px !important; 
                 }
             }
         }
-        .btn {
+        .btn{
             color: $heading2 !important;
             padding: 10px 85px;
             font-size: 16px !important;
+            @include sm{
+                width: 100%;
+            }
         }
+
     }
+
+
+
+
+
+
+
+
+
     .nav-tabs {
         width: 100%;
         display: flex;
         justify-content: center;
         border-bottom: 1px solid $border;
+
     }
+
     .nav-tabs .nav-link {
         color: #8E8F95 !important;
         font-size: 16px;
         font-weight: 500;
-        &:hover {}
+        &:not(.active){
+            &:hover {
+                border-color:  transparent !important;
+                color: $primary !important;
+            }
+        }
     }
+
     .nav-tabs .nav-link.active,
     .nav-tabs .nav-item.show .nav-link {
         color: $heading2 !important;
@@ -108,9 +183,37 @@
         font-weight: 500;
         border-color: transparent;
         border-bottom: 1px solid #4DD5B8;
+
     }
+
     .nav-tabs .nav-link:hover,
     .nav-tabs .nav-link:focus {
         isolation: none;
+    }
+}
+
+.broken{
+    .broken-modal{
+      .link-item{
+        p{
+            color: $heading2;
+        }
+        a{
+            color: #FF823C;
+            text-decoration-line: underline !important;
+        }
+      }
+      .broken-contact{
+        color: $heading2;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .line{
+        height: 100%;
+        background-color: $border;
+      }
+      .btns{
+        color: $heading2;
+      }
     }
 }
