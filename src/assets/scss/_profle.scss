@@ -1,0 +1,142 @@
+.profile {
+    border-radius: 12px;
+    border: 1px solid $border;
+    background: $white;
+    padding: 12px;
+
+    &-details {
+        border-radius: 16px;
+        border: 1px solid $border;
+        background: $white;
+        padding: 20px;
+
+        .image{
+            max-width: 100%;
+            border-radius: 12px;
+            margin-bottom: 114px;
+            img{
+                border-radius: 12px;
+                height: 100%;
+            }
+
+        }
+        .profile-area{
+            bottom: -64%;
+        }
+        .upload-banner{
+            --width:40px;
+            width: var(--width);
+            height: var(--width);
+            right: 16px;
+            top: 16px;
+            padding: 12px;
+            background-color: $white;
+            border-radius: 50%;
+            cursor: pointer;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        .profile-img{
+            --width:147px;
+            width: var(--width);
+            height: var(--width);
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        .profile-edit {
+
+            --width:40px;
+            width: var(--width);
+            height: var(--width);
+            padding: 12px;
+            border-radius: 50%;
+            bottom: -35px;
+            cursor: pointer;
+            
+        }
+
+        .profile-history{
+            .form-box{
+                .form-label{
+                    font-size: 16px !important; 
+                }
+            }
+            .line{
+                width: 100%;
+                height: 1px;
+                background-color: $border;
+            }
+            .invoice{
+                color: $heading2;
+            }
+        }
+    }
+    &-social {
+        border-radius: 16px;
+        border: 1px solid $border;
+        background: $white;
+        padding: 20px;
+        .title{
+            font-size: 18px;
+            color: $heading2;
+        }
+        .social{
+            .form-box{
+                .form-label{
+                    font-size: 16px !important; 
+                }
+            }
+        }
+        .btn{
+            color: $heading2 !important;
+            padding: 10px 85px;
+            font-size: 16px !important;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+    .nav-tabs {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid $border;
+
+    }
+
+    .nav-tabs .nav-link {
+        color: #8E8F95 !important;
+        font-size: 16px;
+        font-weight: 500;
+
+        &:hover {}
+    }
+
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-item.show .nav-link {
+        color: $heading2 !important;
+        font-size: 16px;
+        font-weight: 500;
+        border-color: transparent;
+        border-bottom: 1px solid #4DD5B8;
+
+    }
+
+    .nav-tabs .nav-link:hover,
+    .nav-tabs .nav-link:focus {
+        isolation: none;
+    }
+}

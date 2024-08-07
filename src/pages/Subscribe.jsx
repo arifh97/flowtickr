@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import Form from 'react-bootstrap/Form';
 import visa from "../assets/img/visa.png"
 import paple from "../assets/img/paple.png"
+import backcard3 from "../assets/img/backcard3.png"
 
 
 export default function Subscribe() {
@@ -69,7 +70,7 @@ export default function Subscribe() {
                     </div>
                   }
                   <div className="card-body mb-3">
-                    <p className="title mb-1 fs-16 fw-medium ">{item.title}</p>
+                    <p className="title mb-1 fs-6 fw-medium ">{item.title}</p>
                     <p className="des fs-14 fw-normal mb-2" >{item.des}</p>
                     <p className="price fw-normal fs-14"><span className="fw-semibold ">${item.price}</span>/yearly</p>
                   </div>
@@ -83,7 +84,7 @@ export default function Subscribe() {
                       </li>
                     ))
                   }
-                  <a href="#" className={`btn mt-3 w-100 text-center ${idx == 1 && "bg-primary"} `}>Subscribe now</a>
+                  <Link to="/modal" className={`btn mt-3 w-100 text-center ${idx == 1 && "bg-primary"} `}>Subscribe now</Link>
                 </div>
               </Col>
 
@@ -92,7 +93,7 @@ export default function Subscribe() {
         </Row>
       </div>
 
-
+{/* 
       <div className="subscribe-modal p-4 ">
         <div className="modal-heading d-flex align-items-center gap-2 ">
           <Link to="/marketplace" className="d-flex align-items-center justify-content-center back">
@@ -104,10 +105,10 @@ export default function Subscribe() {
           <p>Subscribe Strategies</p>
         </div>
         <div className="subscribe-modal-costcard p-3">
-          <p className="title fs-16 fw-semibold mb-2 pb-1">Strategy Name AI Calculation </p>
+          <p className="title fs-6 fw-semibold mb-2 pb-1">Strategy Name AI Calculation </p>
           <p className="des fw-14 fw-normal mb-3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.</p>
           <div className="input-item mb-3 position-relative z-0">
-            <p className="input-title mb-2 fs-16 fw-semibold">Select Duration</p>
+            <p className="input-title mb-2 fs-6 fw-semibold">Select Duration</p>
             <Form.Select aria-label="Default select example">
               <option>12 Month</option>
               <option value="1">12 Month</option>
@@ -122,7 +123,7 @@ export default function Subscribe() {
             </span>
           </div>
           <div className="cost-details">
-            <p className="title fs-16 fw-semibold mb-3">Cost Details</p>
+            <p className="title fs-6 fw-semibold mb-3">Cost Details</p>
             <div className="d-flex align-items-center justify-content-between mb-2 pb-1">
               <p className="d-flex align-items-center gap-1 cost fs-14 fw-normal">
                 <span>
@@ -134,7 +135,7 @@ export default function Subscribe() {
                 </span>
                 Cost
               </p>
-              <p className="price fs-16 fw-semibold">$110.99</p>
+              <p className="price fs-6 fw-semibold">$110.99</p>
             </div>
             <div className="d-flex align-items-center justify-content-between mb-2 pb-1">
               <p className="d-flex align-items-center gap-1 cost fs-14 fw-normal">
@@ -146,17 +147,17 @@ export default function Subscribe() {
                 </span>
                 Duration
               </p>
-              <p className="price fs-16 fw-semibold">6 Months</p>
+              <p className="price fs-6 fw-semibold">6 Months</p>
             </div>
             <div className="d-flex align-items-center justify-content-between mb-2 pb-1">
               <p className="cost fs-14 fw-normal">
                 Discount
               </p>
-              <p className="price fs-16 fw-semibold"><span>(10%)</span> -$10.99</p>
+              <p className="price fs-6 fw-semibold"><span>(10%)</span> -$10.99</p>
             </div>
             <div className="total d-flex justify-content-between align-items-center">
               <p className="total-cost fs-14 fw-normal">Total Cost</p>
-              <p className="fs-16 fw-semibold ">$100.99</p>
+              <p className="fs-6 fw-semibold ">$100.99</p>
             </div>
           </div>
         </div>
@@ -173,7 +174,7 @@ export default function Subscribe() {
           </div>
           <div className="card-item mb-3 d-flex align-items-center justify-content-between">
             <div className="bank-card d-flex align-items-center gap-2">
-              <div className="image d-flex align-items-center justify-content-center"><img className="p-0" src={paple} alt="" /></div>
+              <div className="image d-flex align-items-center justify-content-center"><img src={paple} alt="" /></div>
               <div>
                 <span className="fs-14 fw-semibold mb-1">Murad Hossain</span>
                 <p className="fs-14 fw-medium">XXXX XXXX XXXX 8980</p>
@@ -181,8 +182,28 @@ export default function Subscribe() {
             </div>
             <div className="cricle"></div>
           </div>
+          <div className="card-item mb-4 d-flex align-items-center justify-content-between">
+            <div className="bank-card d-flex align-items-center gap-2">
+              <div className="image d-flex align-items-center justify-content-center"><img src={backcard3} alt="" /></div>
+              <div>
+                <span className="fs-14 fw-semibold mb-1">Murad Hossain</span>
+                <p className="fs-14 fw-medium">XXXX XXXX XXXX 8980</p>
+              </div>
+            </div>
+            <div className="cricle"></div>
+          </div>
+          <div className="add-cards mb-3">
+            <Link to="/" className=" fs-6 fw-medium  d-flex align-items-center gap-2 btn w-100 justify-content-center ">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 0.9375V11.0625ZM11.0625 6H0.9375Z" fill="#151B22" />
+                <path d="M6 0.9375V11.0625M11.0625 6H0.9375" stroke="black" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>  
+              Add new card
+            </Link>
+          </div>
+          <button className="btn fs-6 fw-medium text-center w-100 ">Pay Now</button>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

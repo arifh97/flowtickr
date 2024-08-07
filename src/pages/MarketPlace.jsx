@@ -250,7 +250,7 @@ export default function MarketPlace() {
   return (
     <div className='dashboard-wrap marketplace'>
       <div className="marketplace-header mb-3 mb-md-4 d-flex align-items-center justify-content-between">
-        <p className='fs-16 fw-bold' >Marketplace</p>
+        <p className='fs-6 fw-bold' >Marketplace</p>
         <div className='input-item position-relative z-0'>
           <input className='fz-14 fw-normal' type="text" name="" id="" placeholder='Search' />
           <span className='position-absolute z-1 '>
@@ -273,7 +273,7 @@ export default function MarketPlace() {
             marketplacecards.map((item, idx) => (
               <Col xs={12} lg={6} xl={4} className='marketplace-items-cards mb-2 mb-md-3' key={idx}>
                 <div className="marketplace-items-cards-card">
-                  <p className='title mb-2 pb-1 fs-16 fw-medium '>{item.title}</p>
+                  <p className='title mb-2 pb-1 fs-6 fw-medium '>{item.title}</p>
                   <p className='mb-2 pb-1 des fs-14 fw-normal'>{item.des}<span>Read More</span></p>
                   <div className="card-history mb-3 d-flex align-items-center gap-2">
                     <p className='month fs-14 fw-medium '>Created: {item.time}</p>
@@ -288,7 +288,7 @@ export default function MarketPlace() {
                               <img src={itm.image} alt="" />
                             </div>
                             <div className='values'>
-                              <p className='mb-1 price fs-16 fw-semibold'>{itm.price}</p>
+                              <p className='mb-1 price fs-6 fw-semibold'>{itm.price}</p>
                               <p className='fs-14' >{item.value}</p>
                             </div>
                           </div>

@@ -13,6 +13,7 @@ import Contact from './pages/Contact'
 import Marketplace from './pages/MarketPlace'
 import Profile from './pages/Profile'
 import Subscribe from './pages/Subscribe'
+import Modal from './pages/Modal'
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         element:<Subscribe/>
       },
     ]
+  },
+  {
+    path: '/modal',
+    element:<Modal/>
   },
 ])
 
