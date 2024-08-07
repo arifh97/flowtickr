@@ -298,4 +298,52 @@
             }
         }
     }
+    &-detail {
+        &-header {
+            & .icon {
+                --size: 40px;
+                width: var(--size);
+                height: var(--size);
+                border-radius: 37px;
+                background: $bgGray;
+                padding: 0;
+            }
+            & .text {
+                & h4 {
+                    font-size: 18px;
+                }
+                & p {
+                    & a {
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+        & .button {
+            gap: 10px;
+            padding: 18px 0;
+            & span {
+                padding: 2px 8px;
+                background: $bgGray;
+                border-radius: 8px;
+                &:last-child {
+                    background-color: #FFC833;
+                }
+            }
+        }
+    }
+}
+
+.detail-item {
+    &-single {
+        border-radius: 8px;
+        background: $bgGray;
+        width: 32.99%;
+        & .icon {
+            --size: 43px;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 8px;
+        }
+    }
 }
