@@ -5,6 +5,10 @@ import { GoListUnordered } from "react-icons/go";
 import threeDot from '../assets/img/dashboard/threeDot.svg'
 import exportIcon from '../assets/img/dashboard/export-icon.svg'
 import plusIcon from '../assets/img/dashboard/plus.svg'
+import { TfiAngleDown } from "react-icons/tfi";
+import { BsThreeDots } from "react-icons/bs";
+
+
 
 export default function Strategies() {
   const profitCard = [
@@ -12,40 +16,57 @@ export default function Strategies() {
       title: 'Strategy Name AI Calculation ',
       des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
       read_more: 'Read More',
-      create_date: 'Created: 10 months ago',
-      live_development: 'Live development: 10',
-
+      create_date: '10',
+      live_development: '10',
     },
     {
       title: 'Strategy Name AI Calculation ',
       des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
       read_more: 'Read More',
-      create_date: 'Created: 10 months ago',
-      live_development: 'Live development: 10',
-
+      create_date: '10',
+      live_development: '10',
     },
     {
       title: 'Strategy Name AI Calculation ',
       des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
       read_more: 'Read More',
-      create_date: 'Created: 10 months ago',
-      live_development: 'Live development: 10',
-
+      create_date: '10',
+      live_development: '10',
     },
     {
       title: 'Strategy Name AI Calculation ',
       des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
       read_more: 'Read More',
-      create_date: 'Created: 10 months ago',
-      live_development: 'Live development: 10',
+      create_date: '10',
+      live_development: '10',
+    },
 
+  ]
+  const listHead = [
+    {
+      name: 'Name',
+    },
+    {
+      name: 'Info',
+    },
+    {
+      name: 'Created',
+    },
+    {
+      name: 'Live Dev',
+    },
+    {
+      name: 'Tags',
+    },
+    {
+      name: 'Action',
     },
   ]
   return (
     <>
       <PageTitle title="Home" />
       <div className="profile">
-        <div className="profile-profit strategies">
+        <div className="profile-profit strategies bg-white">
           <div className="strategies-header d-flex justify-content-between align-items-center">
             <div className="dashboard-topBar-search  rounded-3 position-relative z-1 d-none d-md-block">
               <div className="icon d-flex align-items-center justify-content-center position-absolute top-50 translate-middle-y ms-3">
@@ -84,8 +105,8 @@ export default function Strategies() {
                   <div className="profile-profit-card bg-white" key={index}>
                     <span className="subTitle fs-12">Subscribed</span>
                     <h4 className='mb-2 pb-1 fs-16 lh-base fw-medium'>{item.title}</h4>
-                    <p className='fs-14 mb-2 pb-2 lh-base'>{item.des} <a href="#" className='read'> {item.read_more}</a></p>
-                    <div className='d-flex create'><span className='fs-12 lh-base fw-medium text-heading'>{item.create_date}</span> <span className='fs-12 lh-base fw-medium '>{item.live_development}</span></div>
+                    <p className='fs-14 mb-2 pb-2 lh-base'>{item.des} <a href="#" className='read fw-semibold'> {item.read_more}</a></p>
+                    <div className='d-flex create'><span className='fs-12 lh-base fw-medium text-heading'>Created: {item.create_date} months ago</span> <span className='fs-12 lh-base fw-medium '>Live development: {item.live_development}</span></div>
                     <div className="card-btn">
                       <a href="#" className="btn">Run Strategy</a>
                       <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><img src={threeDot} alt="" /></button>
@@ -101,8 +122,8 @@ export default function Strategies() {
                   <div className="profile-profit-card bg-white" key={index}>
                     <span className="subTitle fs-12">Subscribed</span>
                     <h4 className='mb-2 pb-1 fs-16 lh-base fw-medium'>{item.title}</h4>
-                    <p className='fs-14 mb-2 pb-2 lh-base'>{item.des} <a href="#" className='read'> {item.read_more}</a></p>
-                    <div className='d-flex create'><span className='fs-12 lh-base fw-medium text-heading'>{item.create_date}</span> <span className='fs-12 lh-base fw-medium '>{item.live_development}</span></div>
+                    <p className='fs-14 mb-2 pb-2 lh-base'>{item.des} <a href="#" className='read fw-semibold'> {item.read_more}</a></p>
+                    <div className='d-flex create'><span className='fs-12 lh-base fw-medium text-heading'>Created: {item.create_date} months ago</span> <span className='fs-12 lh-base fw-medium '>Live development: {item.live_development}</span></div>
                     <div className="card-btn">
                       <a href="#" className="btn">Run Strategy</a>
                       <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><img src={threeDot} alt="" /></button>
@@ -113,18 +134,65 @@ export default function Strategies() {
             </div>
           </div>
           <div className="list-view">
-            <div className="createdByMe">
-              <h3 id="title" className='text-heading fs-16 fw-bold lh-base mt-4 mb-3'>Created By Me</h3>
-              <div className="profile-profit-lists d-flex flex-wrap">
+            <div className="createdByMe mb-4">
+              <h3 id="title" className='text-heading fs-16 fw-bold lh-base p-3 mb-3'>Created By Me</h3>
+              <div className="profile-profit-cards m-0  p-3  lists table w-100">
+                <div className="tr d-flex">
+                  {listHead.map((item, index) => (
+                    <div className="th d-flex gap-2 align-items-center" key={index}>{item.name}<TfiAngleDown /></div>
+                  ))}
+                </div>
                 {profitCard.map((item, index) => (
-                  <div className="profile-profit-list bg-white" key={index}>
-                    <span className="subTitle fs-12">Subscribed</span>
-                    <h4 className='mb-2 pb-1 fs-16 lh-base fw-medium'>{item.title}</h4>
-                    <p className='fs-14 mb-2 pb-2 lh-base'>{item.des} <a href="#" className='read'> {item.read_more}</a></p>
-                    <div className='d-flex create'><span className='fs-12 lh-base fw-medium text-heading'>{item.create_date}</span> <span className='fs-12 lh-base fw-medium '>{item.live_development}</span></div>
-                    <div className="card-btn">
-                      <a href="#" className="btn">Run Strategy</a>
-                      <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><img src={threeDot} alt="" /></button>
+                  <div className="profile-profit-card lists-list bg-white tr w-100 d-flex align-items-center" key={index}>
+                    <div className="td">
+                      <h4 className='mb-2 pb-1 fs-6 lh-base fw-medium mr-6'>{item.title}</h4>
+                    </div>
+                    <div className="td">
+                      <p className='fs-14 mb-2 pb-2  lh-base mr-6'>{item.des} <a href="#" className='read fw-semibold'> {item.read_more}</a></p>
+                    </div>
+                    <div className="td">
+                      <span className='fs-6 lh-base  text-heading bg-white'>{item.create_date} m Ago</span>
+                    </div>
+                    <div className="td">
+                      <span className='fs-6 lh-base text-heading bg-white'>{item.live_development}</span>
+                    </div>
+                    <div className="td">
+                      <span className="subTitle fs-12">Subscribed</span>
+                    </div>
+                    <div className="td">
+                      <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><BsThreeDots /></button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="fromMarketplace">
+              <h3 id="title" className='text-heading fs-16 fw-bold lh-base p-3 mb-3'>Marketplace</h3>
+              <div className="profile-profit-cards m-0 p-3  lists table w-100">
+                <div className="tr d-flex">
+                  {listHead.map((item, index) => (
+                    <div className="th d-flex gap-2 align-items-center" key={index}>{item.name}<TfiAngleDown /></div>
+                  ))}
+                </div>
+                {profitCard.map((item, index) => (
+                  <div className="profile-profit-card lists-list bg-white tr w-100 d-flex align-items-center" key={index}>
+                    <div className="td">
+                      <h4 className='mb-2 pb-1 fs-6 lh-base fw-medium mr-6'>{item.title}</h4>
+                    </div>
+                    <div className="td">
+                      <p className='fs-14 mb-2 pb-2  lh-base mr-6'>{item.des} <a href="#" className='read fw-semibold'> {item.read_more}</a></p>
+                    </div>
+                    <div className="td">
+                      <span className='fs-6 lh-base  text-heading bg-white'>{item.create_date} m Ago</span>
+                    </div>
+                    <div className="td">
+                      <span className='fs-6 lh-base text-heading bg-white'>{item.live_development}</span>
+                    </div>
+                    <div className="td">
+                      <span className="subTitle fs-12">Subscribed</span>
+                    </div>
+                    <div className="td">
+                      <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><BsThreeDots /></button>
                     </div>
                   </div>
                 ))}
