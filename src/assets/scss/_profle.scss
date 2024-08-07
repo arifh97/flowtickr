@@ -1,9 +1,4 @@
 .profile {
-    border-radius: 12px;
-    border: 1px solid $border;
-    background: $white;
-    padding: 12px;
-
     &-details {
         border-radius: 16px;
         border: 1px solid $border;
@@ -173,8 +168,12 @@
         color: #8E8F95 !important;
         font-size: 16px;
         font-weight: 500;
-
-        &:hover {}
+        &:not(.active){
+            &:hover {
+                border-color:  transparent !important;
+                color: $primary !important;
+            }
+        }
     }
 
     .nav-tabs .nav-link.active,
@@ -194,9 +193,6 @@
 }
 
 .broken{
-
-
-
     .broken-modal{
       .link-item{
         p{
@@ -206,6 +202,18 @@
             color: #FF823C;
             text-decoration-line: underline !important;
         }
+      }
+      .broken-contact{
+        color: $heading2;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .line{
+        height: 100%;
+        background-color: $border;
+      }
+      .btns{
+        color: $heading2;
       }
     }
 }
