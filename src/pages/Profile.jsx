@@ -9,6 +9,8 @@ import profilebanner from "../assets/img/profile-banner.png"
 import uploadicon from "../assets/img/profile-banner-icon.png"
 import profileimg from "../assets/img/profile-img.png"
 import { Link } from 'react-router-dom';
+import ImageUploadPreview from '../components/ImageUploadPreview';
+import { LiaAngleLeftSolid } from 'react-icons/lia';
 
 export default function Profile() {
   return (
@@ -79,7 +81,38 @@ export default function Profile() {
           Tab content for Profile
         </Tab>
         <Tab eventKey="Broker" title="Broker" >
-          Tab content for Contact
+          <div className="broken">
+
+            <div className="d-flex justify-content-end">
+              <div className={`broken-modal align-items-center justify-content-end  p-3 p-md-4 position-fixed top-0 start-0 w-100 z-2 bg-black bg-opacity-20 h-100  `}>
+                <div className="login-otp-wrap bg-white py-4 px-3 rounded-4 h-100">
+                  <div className="login-otp-scroll h-100 px-2 d-flex flex-column overflow-auto">
+                    <div className="login-popup-header position-sticky top-0 start-0 z-2 w-100 bg-white d-flex align-items-center gap-2 mb-3 pb-md-1">
+                      <button className="login-close text-body d-flex align-items-center justify-content-center rounded-pill border-0 p-0" ><LiaAngleLeftSolid /></button>
+                      <h4 className="mb-0">Add New Broker</h4>
+                    </div>
+                    <div className=" gap-3 mb-3">
+                      <FormBox type="text" label="Select Broker" placeholder="Select Broker" />
+                    </div>
+                    <div className='link-item mb-3'>
+                      <p className='fs-6 fw-medium mb-2'>Setup Link</p>
+                      <a className='fs-6 fw-medium ' href="https://tradetron.tech/html-view/Configure-ABSTOX">https://tradetron.tech/html-view/Configure-ABSTOX</a>
+                    </div>
+                    <div className="mb-3">
+                      <CountryDropdown />
+                    </div>
+                    <FormBox className="mb-3" type="text" label="Address Line 1" placeholder="Type here" />
+                    <FormBox className="mb-3" type="text" label="Address Line 2" placeholder="Type here" />
+                    <ImageUploadPreview className="mb-4" id="profile_upload" />
+                    <div className="d-flex flex-column gap-2 mt-auto">
+                      <Link to="/dashboard" className="btn bg-transparent w-100 fs-14 mb-1">Skip</Link>
+                      <Link to="/dashboard" className="btn bg-primary w-100 fs-14">Save Information</Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </Tab>
         <Tab eventKey="Notification" title="Notification" >
           Tab content for Contact

@@ -149,6 +149,7 @@
                 border-radius: 8px;
                 border: 1px solid $border;
                 padding: 8px 12px;
+                cursor: pointer;
                 .bank-card {
                     .image {
                         --width: 36px;
@@ -174,13 +175,24 @@
                         color: #8E8F95;
                     }
                 }
-                .cricle {
+                & input:checked~.circle::before {
+                    display: block;
+                }
+                .circle {
                     --width: 20px;
                     height: var(--width);
                     width: var(--width);
                     background-color: $white;
                     border: 2px solid #FF823C;
                     border-radius: 50%;
+                    position: relative;
+                    z-index: 1;
+                    &::before {
+                        content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='7' cy='7' r='7' fill='%23FF823C'/%3e%3cpath d='M10.3335 4.91675L6.16683 9.08341L4.0835 7.00008' stroke='white' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+                        @include position-middle;
+                        margin-top: 1px;
+                        display: none;
+                    }
                 }
             }
             .add-cards {

@@ -192,3 +192,20 @@
         isolation: none;
     }
 }
+
+.broken{
+
+
+
+    .broken-modal{
+      .link-item{
+        p{
+            color: $heading2;
+        }
+        a{
+            color: #FF823C;
+            text-decoration-line: underline !important;
+        }
+      }
+    }
+}
