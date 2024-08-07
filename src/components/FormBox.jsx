@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function FormBox({className="", label, placeholder, inputClass="", value= "", type="text" }) {
+export default  function FormBox({className="", label, placeholder, inputClass="", value= "", type="text" }) {
     const [inValue, setInValue] = useState(value);
     useEffect(() => {
         setInValue(value);

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import Form from 'react-bootstrap/Form';
 import visa from "../assets/img/visa.png"
 import paple from "../assets/img/paple.png"
+import backcard3 from "../assets/img/backcard3.png"
 
 
 export default function Subscribe() {
@@ -83,7 +84,7 @@ export default function Subscribe() {
                       </li>
                     ))
                   }
-                  <a href="#" className={`btn mt-3 w-100 text-center ${idx == 1 && "bg-primary"} `}>Subscribe now</a>
+                  <Link to="/modal" className={`btn mt-3 w-100 text-center ${idx == 1 && "bg-primary"} `}>Subscribe now</Link>
                 </div>
               </Col>
 
@@ -92,7 +93,7 @@ export default function Subscribe() {
         </Row>
       </div>
 
-
+{/* 
       <div className="subscribe-modal p-4 ">
         <div className="modal-heading d-flex align-items-center gap-2 ">
           <Link to="/marketplace" className="d-flex align-items-center justify-content-center back">
@@ -173,7 +174,7 @@ export default function Subscribe() {
           </div>
           <div className="card-item mb-3 d-flex align-items-center justify-content-between">
             <div className="bank-card d-flex align-items-center gap-2">
-              <div className="image d-flex align-items-center justify-content-center"><img className="p-0" src={paple} alt="" /></div>
+              <div className="image d-flex align-items-center justify-content-center"><img src={paple} alt="" /></div>
               <div>
                 <span className="fs-14 fw-semibold mb-1">Murad Hossain</span>
                 <p className="fs-14 fw-medium">XXXX XXXX XXXX 8980</p>
@@ -181,8 +182,28 @@ export default function Subscribe() {
             </div>
             <div className="cricle"></div>
           </div>
+          <div className="card-item mb-4 d-flex align-items-center justify-content-between">
+            <div className="bank-card d-flex align-items-center gap-2">
+              <div className="image d-flex align-items-center justify-content-center"><img src={backcard3} alt="" /></div>
+              <div>
+                <span className="fs-14 fw-semibold mb-1">Murad Hossain</span>
+                <p className="fs-14 fw-medium">XXXX XXXX XXXX 8980</p>
+              </div>
+            </div>
+            <div className="cricle"></div>
+          </div>
+          <div className="add-cards mb-3">
+            <Link to="/" className=" fs-16 fw-medium  d-flex align-items-center gap-2 btn w-100 justify-content-center ">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 0.9375V11.0625ZM11.0625 6H0.9375Z" fill="#151B22" />
+                <path d="M6 0.9375V11.0625M11.0625 6H0.9375" stroke="black" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>  
+              Add new card
+            </Link>
+          </div>
+          <button className="btn fs-16 fw-medium text-center w-100 ">Pay Now</button>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
