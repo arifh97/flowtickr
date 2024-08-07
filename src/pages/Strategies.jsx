@@ -21,6 +21,14 @@ export default function Strategies() {
       read_more: 'Read More',
       create_date: '10',
       live_development: '10',
+      // for list views threeDot menu
+      menuItem: [
+        { link: 'Setting' },
+        { link: 'Run' },
+        { link: 'Deploy' },
+      ],
+      // for list views threeDot menu
+
     },
     {
       title: 'Strategy Name AI Calculation ',
@@ -28,6 +36,14 @@ export default function Strategies() {
       read_more: 'Read More',
       create_date: '10',
       live_development: '10',
+      // for list views threeDot menu
+      menuItem: [
+        { link: 'Setting' },
+        { link: 'Run' },
+        { link: 'Deploy' },
+      ],
+      // for list views threeDot menu
+
     },
     {
       title: 'Strategy Name AI Calculation ',
@@ -35,6 +51,14 @@ export default function Strategies() {
       read_more: 'Read More',
       create_date: '10',
       live_development: '10',
+      // for list views threeDot menu
+      menuItem: [
+        { link: 'Setting' },
+        { link: 'Run' },
+        { link: 'Deploy' },
+      ],
+      // for list views threeDot menu
+
     },
     {
       title: 'Strategy Name AI Calculation ',
@@ -42,6 +66,14 @@ export default function Strategies() {
       read_more: 'Read More',
       create_date: '10',
       live_development: '10',
+      // for list views threeDot menu
+      menuItem: [
+        { link: 'Setting' },
+        { link: 'Run' },
+        { link: 'Deploy' },
+      ],
+      // for list views threeDot menu
+
     },
 
   ]
@@ -169,7 +201,16 @@ export default function Strategies() {
                         <span className="subTitle fs-12">Subscribed</span>
                       </div>
                       <div className="td">
-                        <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><BsThreeDots /></button>
+                        <button id="menu" className='position-relative d-flex align-items-center bg-white justify-content-center p-0'>
+                          <BsThreeDots />
+                          <div className="menu-box  position-absolute bg-white z-2  end-0">
+                            {item.menuItem.map((item, index) => (
+                              <a key={index} href="#" className='menu-item text-start fs-6 fw-semibold lh-base text-heading'>
+                                {item.link}
+                              </a>
+                            ))}
+                          </div>
+                        </button>
                       </div>
                     </div>
                   ))}
@@ -201,7 +242,16 @@ export default function Strategies() {
                         <span className="subTitle fs-12">Subscribed</span>
                       </div>
                       <div className="td">
-                        <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><BsThreeDots /></button>
+                        <button id="menu" className=' position-relative d-flex align-items-center bg-white justify-content-center p-0'>
+                          <BsThreeDots />
+                          <div className="menu-box position-absolute bg-white z-2 end-0">
+                            {item.menuItem.map((item, index) => (
+                              <a key={index} href="#" className='menu-item  text-start fs-6 fw-semibold lh-base text-heading'>
+                                {item.link}
+                              </a>
+                            ))}
+                          </div>
+                        </button>
                       </div>
                     </div>
                   ))}
