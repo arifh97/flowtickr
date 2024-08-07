@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { LiaAngleDownSolid, LiaAngleUpSolid } from "react-icons/lia";
 import { FaBars } from "react-icons/fa";
 import welcome from '../../assets/img/dashboard/welcome.png'
@@ -8,10 +8,6 @@ import logo from '../../assets/img/logo.png'
 
 export default function TopBar({onClick}) {
     const [profileModal, setProfileModal] = useState(false);
-    const navigate = useNavigate();
-    useEffect(() => {
-        console.log(useNavigate);
-    },[navigate])
     return (
         <>
         <div className='dashboard-topBar d-flex align-items-center'>
@@ -68,8 +64,8 @@ export default function TopBar({onClick}) {
                     {profileModal &&
                         <div className="profile-dropdown border-top-0 position-absolute top-100 start-50 translate-middle-x border border-primary bg-white">
                             <ul>
-                                <li><Link className="fs-6 d-block lh-base fw-semibold" to="/profile">Profile</Link></li>
-                                <li><Link className="fs-6 d-block lh-base fw-semibold" to="/">Logout</Link></li>
+                                <li><Link onClick={() => setProfileModal(!profileModal)} className="fs-6 d-block lh-base fw-semibold" to="/profile">Profile</Link></li>
+                                <li><Link onClick={() => setProfileModal(!profileModal)} className="fs-6 d-block lh-base fw-semibold" to="/">Logout</Link></li>
                             </ul>
                         </div>
                     }
