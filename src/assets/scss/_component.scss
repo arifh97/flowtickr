@@ -78,5 +78,8 @@
 }
 
 .mr-6 {
-    margin-right: 6rem !important;
+    @include xxxl {
+        margin-right: 6rem !important;
+    }
+    margin-right: 1rem;
 }

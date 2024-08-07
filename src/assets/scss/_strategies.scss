@@ -1,4 +1,15 @@
 .strategies {
+    &-header {
+        position: relative;
+        @include mmd {
+            margin-bottom: 72px;
+        }
+    }
+    & .form-control {
+        @include ssm {
+            width: 90%;
+        }
+    }
     &-btn {
         gap: 24px;
         & .view-btn {
@@ -28,12 +39,35 @@
                 }
             }
         }
+        & .btn-wrap {
+            display: flex;
+            gap: 24px;
+            @include mmd {
+                position: absolute;
+                left: 50%;
+                bottom: -56px;
+                transform: translate(-50%, 0);
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            @include sm {
+                gap: 16px;
+            }
+        }
         & .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             --bs-btn-padding-y: 10px;
+            @include mmd {
+                width: calc(50% - 48px);
+            }
+            @include sm {
+                width: 50%;
+                padding: var(--bs-btn-padding-y) 0;
+            }
             & svg {
                 @include transition;
             }
@@ -52,7 +86,20 @@
     & .profile-profit-card {
         max-width: 358px;
         @include xxxl {
-            max-width: 387px;
+            max-width: 24.23%;
+        }
+        @include xxl {
+            max-width: 32.3%;
+        }
+        @include xl {
+            max-width: 32.18%;
+        }
+        @include lg {
+            max-width: 312px;
+        }
+        @include mmd {
+            width: 100%;
+            max-width: 100%;
         }
         & p {
             margin-bottom: 12px;
@@ -72,6 +119,9 @@
                 &:nth-child(2) {
                     color: #FFBA00;
                     background: rgba(255, 200, 51, 0.10);
+                }
+                @include xl {
+                    padding: 2px 4px;
                 }
             }
         }
@@ -116,11 +166,18 @@
             }
         }
         & .table {
+            overflow: auto;
             &> :not(caption)>*>* {
                 padding: 0 !important;
             }
             & .tr {
                 border-bottom: 1px solid #EAEAEA;
+                @include lg {
+                    width: fit-content !important;
+                }
+                @include mmd {
+                    width: fit-content !important;
+                }
                 &:first-child {
                     background: $bgGray;
                 }
@@ -133,45 +190,83 @@
                     background: $bgGray;
                 }
             }
+            & .td {
+                padding-left: 8px;
+            }
             & .td,
             .th {
                 background-color: transparent;
                 text-align: left;
                 border: none;
+                @include lg {
+                    flex: 0 0 auto;
+                }
                 &:first-child {
                     width: 27.23%;
+                    @include xl {
+                        width: 26.23%;
+                    }
+                    @include lg {
+                        width: 293px;
+                    }
+                    @include mmd {
+                        width: 293px;
+                    }
                 }
                 &:nth-child(2) {
                     width: 27.23%;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    -webkit-line-clamp: 2;
-                    @include xxl {}
-                    @include xl {}
-                    @include lg {}
-                    @include mmd {}
+                    @include lg {
+                        width: 325px;
+                    }
+                    @include mmd {
+                        width: 293px;
+                    }
                 }
                 &:nth-child(3) {
                     width: 11.05%;
+                    @include xl {
+                        width: 13.05%;
+                    }
+                    @include lg {
+                        width: 119px;
+                    }
+                    @include mmd {
+                        width: 119px;
+                    }
                 }
                 &:nth-child(4) {
                     width: 11.05%;
-                    @include lg {}
-                    @include md {}
+                    @include xl {
+                        width: 13.05%;
+                    }
+                    @include lg {
+                        width: 119px;
+                    }
+                    @include mmd {
+                        width: 119px;
+                    }
                 }
                 &:nth-child(5) {
                     width: 17.56%;
-                    @include lg {}
+                    @include xl {
+                        width: 13%;
+                    }
+                    @include lg {
+                        width: 119px;
+                    }
+                    @include mmd {
+                        width: 119px;
+                    }
                 }
                 &:nth-child(6) {
                     width: 5.76%;
                     @include xxl {}
-                    @include xl {}
-                    @include lg {}
-                    @include mmd {}
-                    @include sm {}
+                    @include lg {
+                        width: 119px;
+                    }
+                    @include mmd {
+                        width: 119px;
+                    }
                 }
             }
         }
