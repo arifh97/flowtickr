@@ -13,6 +13,7 @@ import ImageUploadPreview from '../components/ImageUploadPreview';
 import { LiaAngleLeftSolid } from 'react-icons/lia';
 import React, { useState } from 'react';
 import Select from 'react-select';
+import Form from 'react-bootstrap/Form';
 
 const options = [
   { value: 'chocolate', label: 'Chocolate' },
@@ -26,7 +27,7 @@ export default function Profile() {
   const handleChange = (options) => {
     setSelectedOptions(options);
   };
-  const [addBroker, setAddBroker] = useState(true);
+  const [addBroker, setAddBroker] = useState(false);
   return (
     <>
       <div className='dashboard-wrap profile'>
@@ -96,7 +97,9 @@ export default function Profile() {
             Tab content for Profile
           </Tab>
           <Tab eventKey="Broker" title="Broker" >
-
+            <div className="broken dashboard-wrap">
+    
+            </div>
           </Tab>
           <Tab eventKey="notification" title="Notification" >
             Tab content for Contact
@@ -112,7 +115,14 @@ export default function Profile() {
                 <h4 className="mb-0">Add New Broker</h4>
               </div>
               <div className=" gap-3 mb-3">
-                <FormBox type="text" label="Select Broker" placeholder="Select Broker" />
+               
+                <p className='broken-contact fs-6'>Select Broker</p>
+                <Form.Select aria-label="Default select example">
+                  <option>Select</option>
+                  <option value="1">Select</option>
+                  <option value="2">Select</option>
+                  <option value="3">Select</option>
+                </Form.Select>
               </div>
               <div className='link-item mb-3'>
                 <p className='fs-6 fw-medium mb-2'>Setup Link</p>
@@ -134,9 +144,9 @@ export default function Profile() {
               <div className="mb-3">
                 <FormBox type="text" label="app_Key" placeholder="Type here" />
               </div>
-              <div className="btns">
-                <a href="#" className='btn fs-6 fw-medium'>Back</a>
-                <button className='btn fs-6 fw-medium'>Save</button>
+              <div className="d-flex flex-column gap-2 mt-auto btns">
+                <Link to="/dashboard" className="btn bg-transparent w-100 fs-14 mb-1">Back</Link>
+                <Link to="/dashboard" className="btn bg-primary w-100 fs-14">Save</Link>
               </div>
             </div>
           </div>
