@@ -19,7 +19,8 @@
                 & svg {
                     color: #727277;
                 }
-                &:hover {
+                &:hover,
+                &.active {
                     background-color: $secondary;
                     & svg {
                         color: $white;
@@ -50,6 +51,9 @@
     }
     & .profile-profit-card {
         max-width: 358px;
+        @include xxxl {
+            max-width: 387px;
+        }
         & p {
             margin-bottom: 12px;
         }
