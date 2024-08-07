@@ -1,0 +1,274 @@
+.strategies {
+    &-header {
+        position: relative;
+        @include mmd {
+            margin-bottom: 72px;
+        }
+    }
+    & .form-control {
+        @include ssm {
+            width: 90%;
+        }
+    }
+    &-btn {
+        gap: 24px;
+        & .view-btn {
+            gap: 4px;
+            margin-right: 4px;
+            & button {
+                --size: 36px;
+                width: var(--size);
+                height: var(--size);
+                border-radius: 8px;
+                border: 1px solid $border;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include transition;
+                padding: 0;
+                background: transparent;
+                & svg {
+                    color: #727277;
+                }
+                &:hover,
+                &.active {
+                    background-color: $secondary;
+                    & svg {
+                        color: $white;
+                    }
+                }
+            }
+        }
+        & .btn-wrap {
+            display: flex;
+            gap: 24px;
+            @include mmd {
+                position: absolute;
+                left: 50%;
+                bottom: -56px;
+                transform: translate(-50%, 0);
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            @include sm {
+                gap: 16px;
+            }
+        }
+        & .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            --bs-btn-padding-y: 10px;
+            @include mmd {
+                width: calc(50% - 48px);
+            }
+            @include sm {
+                width: 50%;
+                padding: var(--bs-btn-padding-y) 0;
+            }
+            & svg {
+                @include transition;
+            }
+        }
+        & #primaryIcon {
+            & svg {
+                color: $primary;
+            }
+            &:hover {
+                & svg {
+                    color: $black !important;
+                }
+            }
+        }
+    }
+    & .profile-profit-card {
+        max-width: 358px;
+        @include xxxl {
+            max-width: 24.23%;
+        }
+        @include xxl {
+            max-width: 32.3%;
+        }
+        @include xl {
+            max-width: 32.18%;
+        }
+        @include lg {
+            max-width: 312px;
+        }
+        @include mmd {
+            width: 100%;
+            max-width: 100%;
+        }
+        & p {
+            margin-bottom: 12px;
+        }
+        & .read {
+            color: $secondary;
+        }
+        & .create {
+            gap: 8px;
+            margin-bottom: 16px;
+            & span {
+                border-radius: 8px;
+                padding: 2px 8px;
+                &:first-child {
+                    background: rgba(77, 213, 184, 0.20);
+                }
+                &:nth-child(2) {
+                    color: #FFBA00;
+                    background: rgba(255, 200, 51, 0.10);
+                }
+                @include xl {
+                    padding: 2px 4px;
+                }
+            }
+        }
+    }
+    & .grid-view {
+        &>div {
+            &:not(:last-child) {
+                padding-bottom: 24px;
+                margin-bottom: 24px;
+                border-bottom: 1px solid $border;
+            }
+        }
+    }
+    & .list-view {
+        &>div {
+            border-radius: 12px;
+            border: 1px solid $border;
+        }
+        & .lists {
+            &-list {
+                box-shadow: 0 0 0;
+                border-radius: 0;
+                max-width: none;
+                padding: 14px 0;
+                & #menu {
+                    --size: 30px;
+                    width: var(--size);
+                    height: var(--size);
+                    border-radius: 100%;
+                    border: 1px solid $border;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @include transition;
+                    &:hover {
+                        background-color: $black !important;
+                        & svg {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        & .table {
+            overflow: auto;
+            &> :not(caption)>*>* {
+                padding: 0 !important;
+            }
+            & .tr {
+                border-bottom: 1px solid #EAEAEA;
+                @include lg {
+                    width: fit-content !important;
+                }
+                @include mmd {
+                    width: fit-content !important;
+                }
+                &:first-child {
+                    background: $bgGray;
+                }
+            }
+            & .th {
+                padding: 14px 8px;
+                & svg {
+                    padding: 0 !important;
+                    color: $text;
+                    background: $bgGray;
+                }
+            }
+            & .td {
+                padding-left: 8px;
+            }
+            & .td,
+            .th {
+                background-color: transparent;
+                text-align: left;
+                border: none;
+                @include lg {
+                    flex: 0 0 auto;
+                }
+                &:first-child {
+                    width: 27.23%;
+                    @include xl {
+                        width: 26.23%;
+                    }
+                    @include lg {
+                        width: 293px;
+                    }
+                    @include mmd {
+                        width: 293px;
+                    }
+                }
+                &:nth-child(2) {
+                    width: 27.23%;
+                    @include lg {
+                        width: 325px;
+                    }
+                    @include mmd {
+                        width: 293px;
+                    }
+                }
+                &:nth-child(3) {
+                    width: 11.05%;
+                    @include xl {
+                        width: 13.05%;
+                    }
+                    @include lg {
+                        width: 119px;
+                    }
+                    @include mmd {
+                        width: 119px;
+                    }
+                }
+                &:nth-child(4) {
+                    width: 11.05%;
+                    @include xl {
+                        width: 13.05%;
+                    }
+                    @include lg {
+                        width: 119px;
+                    }
+                    @include mmd {
+                        width: 119px;
+                    }
+                }
+                &:nth-child(5) {
+                    width: 17.56%;
+                    @include xl {
+                        width: 13%;
+                    }
+                    @include lg {
+                        width: 119px;
+                    }
+                    @include mmd {
+                        width: 119px;
+                    }
+                }
+                &:nth-child(6) {
+                    width: 5.76%;
+                    @include xxl {}
+                    @include lg {
+                        width: 119px;
+                    }
+                    @include mmd {
+                        width: 119px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -21,7 +21,7 @@ export default function Profile() {
       >
         <Tab eventKey="My Profile" title="My Profile">
           <Row>
-            <Col xs={12} lg={6}  className='mb-4 mb-lg-0' >
+            <Col xs={12} lg={6} className='mb-4 mb-lg-0' >
               <div className="profile-details">
                 <div className='position-relative z-0'>
                   <div className='position-relative z-0'>

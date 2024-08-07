@@ -7,6 +7,7 @@ import threeDot from '../assets/img/dashboard/threeDot.svg'
 import listIcon_1 from '../assets/img/dashboard/graph-list-icon-1.svg'
 import listIcon_2 from '../assets/img/dashboard/graph-list-icon-2.svg'
 import listIcon_3 from '../assets/img/dashboard/graph-list-icon-3.svg'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   const graphList = [
@@ -112,16 +113,16 @@ export default function Home() {
                   <img src={item.icon} alt="" />
                 </div>
                 <div className="text">
-                  <p>{item.title}</p>
-                  <span>{item.num} </span>
+                  <p className='fs-12 lh-base fw-medium mb-2'>{item.title}</p>
+                  <span className='text-heading fw-semibold'>{item.num} </span>
                 </div>
               </div>
             ))}
-            <a href="#" className="btn">View Watchlist</a>
+            <Link to="#" className="btn d-inline-flex align-items-center justify-content-center">View Watchlist</Link>
           </div>
           <div className="profile-graph-wrap">
             <div className="profile-graph-header d-flex align-items-center justify-content-between">
-              <h4>PNL</h4>
+              <h4 className='fs-6 lh-base fw-bold text-heading'>PNL</h4>
               <button className="btn"> <img src={calendar} alt="" /> Last week</button>
             </div>
             <div className="graph">
@@ -129,17 +130,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="profile-profit">
-          <h3 id="title">Profitability Strategies</h3>
+        <div className="dashboard-wrap profile-profit d-flex flex-column">
+          <h3 id="title" className='text-heading fs-6 fw-bold lh-base'>Profitability Strategies</h3>
           <div className="profile-profit-cards d-flex flex-wrap">
             {profitCard.map((item, index) => (
-              <div className="profile-profit-card " key={index}>
-                <span className="subTitle">Subscribed</span>
-                <h4>{item.title}</h4>
-                <p>{item.des}</p>
+              <div className="profile-profit-card bg-white" key={index}>
+                <span className="subTitle fs-12">Subscribed</span>
+                <h4 className='mb-2 pb-1 fs-6 lh-base fw-medium'>{item.title}</h4>
+                <p className='fs-14 mb-2 pb-2 lh-base'>{item.des}</p>
                 <div className="card-btn">
                   <a href="#" className="btn">Run Strategy</a>
-                  <button id="menu"><img src={threeDot} alt="" /></button>
+                  <button id="menu" className='d-flex align-items-center bg-white justify-content-center p-0'><img src={threeDot} alt="" /></button>
                 </div>
               </div>
             ))}
