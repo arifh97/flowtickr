@@ -257,7 +257,7 @@ export default function Profile() {
               <div className="mb-3">
                 <FormBox type="text" label="Secret_Key  " placeholder="Type here" />
               </div>
-              <div className="mb-3">
+              <div className="mb-4 mb-lg-5">
                 <FormBox type="text" label="app_Key" placeholder="Type here" />
               </div>
               <div className="d-flex flex-column gap-2 mt-auto btns">
