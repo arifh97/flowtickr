@@ -158,8 +158,32 @@
                     @include transition;
                     &:hover {
                         background-color: $black !important;
+                        & .menu-box {
+                            display: block;
+                        }
                         & svg {
                             color: $white;
+                        }
+                    }
+                    & .menu {
+                        &-box {
+                            width: 122px;
+                            border-radius: 8px;
+                            box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.12);
+                            padding: 0 20px;
+                            top: 30px;
+                            display: none;
+                            position: absolute;
+                        }
+                        &-item {
+                            padding: 16px 0;
+                            display: block;
+                            &:not(:last-child) {
+                                border-bottom: 1px solid $border;
+                            }
+                            &:hover {
+                                color: $primary;
+                            }
                         }
                     }
                 }
@@ -167,6 +191,9 @@
         }
         & .table {
             overflow: auto;
+            &::-webkit-scrollbar {
+                width: 0px;
+            }
             &> :not(caption)>*>* {
                 padding: 0 !important;
             }
@@ -269,6 +296,54 @@
                     }
                 }
             }
+        }
+    }
+    &-detail {
+        &-header {
+            & .icon {
+                --size: 40px;
+                width: var(--size);
+                height: var(--size);
+                border-radius: 37px;
+                background: $bgGray;
+                padding: 0;
+            }
+            & .text {
+                & h4 {
+                    font-size: 18px;
+                }
+                & p {
+                    & a {
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+        & .button {
+            gap: 10px;
+            padding: 18px 0;
+            & span {
+                padding: 2px 8px;
+                background: $bgGray;
+                border-radius: 8px;
+                &:last-child {
+                    background-color: #FFC833;
+                }
+            }
+        }
+    }
+}
+
+.detail-item {
+    &-single {
+        border-radius: 8px;
+        background: $bgGray;
+        width: 32.99%;
+        & .icon {
+            --size: 43px;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 8px;
         }
     }
 }
