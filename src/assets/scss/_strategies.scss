@@ -194,8 +194,9 @@
             &::-webkit-scrollbar {
                 width: 0px;
             }
-            &> :not(caption)>*>* {
-                padding: 0 !important;
+            &> :not(caption .subTitle)>*>* {
+                padding: unset;
+                padding-bottom: unset;
             }
             & .tr {
                 border-bottom: 1px solid #EAEAEA;
