@@ -182,7 +182,7 @@
                                 border-bottom: 1px solid $border;
                             }
                             &:hover {
-                                color: $primary;
+                                color: $primary !important;
                             }
                         }
                     }
@@ -301,6 +301,10 @@
     }
     &-detail {
         border-radius: 16px;
+        .strategies-modal & {
+            border-radius: 0;
+            padding: 0 !important;
+        }
         &-header {
             & .icon {
                 --size: 40px;
@@ -361,6 +365,9 @@
             width: calc(50% - 4px);
         }
         @include sm {
+            width: calc(50% - 8px);
+        }
+        .strategies-modal & {
             width: calc(50% - 8px);
         }
         & .icon {
