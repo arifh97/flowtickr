@@ -276,7 +276,8 @@ export default function Strategies() {
             </div>
           }
         </div>
-        <div className="strategies-detail">
+      </div>
+        <div className="strategies-detail bg-white p-3 p-md-4">
           <div className="strategies-detail-header d-flex align-items-center gap-2">
             <div className="icon d-flex align-items-center justify-content-center">
               <TfiAngleLeft />
@@ -296,9 +297,9 @@ export default function Strategies() {
             <p className='mb-4 fs-12 lh-base d-inline-block'><h3 className='fw-semibold d-inline fs-14'>User's responsibilty :</h3>Users are rquested to keep 5 to 10 % more capital than the recommended capital as per their broker and to handle capital rise by exchange on rising VIX days. Once capital is properly maintained and token has been genrated between 8:30 AM to 9 AM, 95% cases there will not be any execution issue. Still if any error on your live deployment, you will get notification via whatsapp or get call from Tradetron. Please check notification log in the deployment to understand the issue and fix it as soon as possible. Once deployment will be in error, strategy stops working which can result in unexpected results. If you are unable to fix the error then connect with us via our telegram group or via personal telegram id mentioned above. We will help you..</p>
             <p className='mb-4 fs-12 lh-base d-inline-block'><h3 className='fw-semibold d-inline fs-14'>User's responsibilty :</h3>Users are rquested to keep 5 to 10 % more capital than the recommended capital as per their broker and to handle capital rise by exchange on rising VIX days. Once capital is properly maintained and token has been genrated between 8:30 AM to 9 AM, 95% cases there will not be any execution issue. Still if any error on your live deployment, you will get notification via whatsapp or get call from Tradetron. Please check notification log in the deployment to understand the issue and fix it as soon as possible. Once deployment will be in error, strategy stops working which can result in unexpected results. If you are unable to fix the error then connect with us via our telegram group or via personal telegram id mentioned above. We will help you..</p>
           </div>
-          <div className="detail-item d-flex gap-2 flex-wrap">
+          <div className="detail-item d-flex gap-3 gap-md-2 flex-wrap">
             {detailItem.map((item, index) => (
-              <div key={index} className="detail-item-single p-2 d-flex align-items-center gap-2">
+              <div key={index} className="detail-item-single p-2 d-flex align-items-center  gap-2">
                 <div className="icon bg-white d-flex align-items-center justify-content-center"><img src={item.icon} alt="" /></div>
                 <div className="text">
                   <h4 className='fs-14 lh-base fw-semibold text-heading mb-1'>{item.title}</h4>
@@ -309,7 +310,6 @@ export default function Strategies() {
           </div>
           <button className="btn bg-primary mt-3">Subscribe</button>
         </div>
-      </div>
     </>
   )
 }

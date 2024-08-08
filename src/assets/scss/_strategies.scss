@@ -194,8 +194,9 @@
             &::-webkit-scrollbar {
                 width: 0px;
             }
-            &> :not(caption)>*>* {
-                padding: 0 !important;
+            &> :not(caption .subTitle)>*>* {
+                padding: unset;
+                padding-bottom: unset;
             }
             & .tr {
                 border-bottom: 1px solid #EAEAEA;
@@ -299,6 +300,7 @@
         }
     }
     &-detail {
+        border-radius: 16px;
         &-header {
             & .icon {
                 --size: 40px;
@@ -331,6 +333,13 @@
                 }
             }
         }
+        & .btn {
+            --bs-btn-padding-x: 54px;
+            --bs-btn-padding-y: 10px;
+            @include sm {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -339,6 +348,21 @@
         border-radius: 8px;
         background: $bgGray;
         width: 32.99%;
+        @include xxl {
+            width: 32.83%;
+        }
+        @include xl {
+            width: 32.75%;
+        }
+        @include lg {
+            width: 32.4%;
+        }
+        @include mmd {
+            width: calc(50% - 4px);
+        }
+        @include sm {
+            width: calc(50% - 8px);
+        }
         & .icon {
             --size: 43px;
             width: var(--size);
