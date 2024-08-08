@@ -10,7 +10,6 @@ import uploadicon from "../assets/img/profile-banner-icon.png"
 import profileimg from "../assets/img/profile-img.png"
 import { Link } from 'react-router-dom';
 
-import ImageUploadPreview from '../components/ImageUploadPreview';
 import { LiaAngleLeftSolid } from 'react-icons/lia';
 import React, { useState } from 'react';
 import Select from 'react-select';
