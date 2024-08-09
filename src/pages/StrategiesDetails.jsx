@@ -6,7 +6,7 @@ export default function StrategiesDetails() {
   const [subscribeModal, setSubscribeModal] = useState(false);
   return (
     <>
-     <StrategiesDC />
+     <StrategiesDC onClick={() => setSubscribeModal(!subscribeModal)} />
       {subscribeModal&&
         <SubscribeModal onClick={() => setSubscribeModal(!subscribeModal)} />
       }

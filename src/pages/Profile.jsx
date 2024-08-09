@@ -19,7 +19,7 @@ import { CiEdit } from "react-icons/ci";
 import { LuPlus } from "react-icons/lu";
 
 const options = [
-  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'CDS (INR)', label: 'CDS (INR)' },
   { value: 'strawberry', label: 'Strawberry' },
   { value: 'vanilla', label: 'Vanilla' },
 ];
@@ -242,7 +242,7 @@ export default function Profile() {
               </div>
               <div className='link-item mb-3'>
                 <p className='fs-6 fw-medium mb-2'>Setup Link</p>
-                <a className='fs-6 fw-medium ' href="https://tradetron.tech/html-view/Configure-ABSTOX">https://tradetron.tech/html-view/Configure-ABSTOX</a>
+                <a className='fs-14 fw-medium ' href="https://tradetron.tech/html-view/Configure-ABSTOX">https://tradetron.tech/html-view/Configure-ABSTOX</a>
               </div>
               <div className='select2 mb-3'>
                 <Select
@@ -261,8 +261,8 @@ export default function Profile() {
                 <FormBox type="text" label="app_Key" placeholder="Type here" />
               </div>
               <div className="d-flex flex-column gap-2 mt-auto btns">
-                <Link to="/dashboard" className="btn bg-transparent w-100 fs-14 mb-1">Back</Link>
-                <Link to="/dashboard" className="btn bg-primary w-100 fs-14">Save</Link>
+                <Link to="#" className="btn bg-transparent w-100 fs-14 mb-1">Back</Link>
+                <Link to="#" className="btn bg-primary w-100 fs-14">Save</Link>
               </div>
             </div>
           </div>
