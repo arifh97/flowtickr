@@ -132,7 +132,7 @@ export default function Strategies() {
                     <path d="M6.375 6.625L11.148 1.852M7.875 1.375H11.625V5.125" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   Export</a>
-                <a href="#" className="btn bg-primary"><FaPlus /> New Strategy</a>
+                <Link to="/create-strategies" className="btn bg-primary"><FaPlus /> New Strategy</Link>
               </div>
             </div>
           </div>

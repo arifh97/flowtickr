@@ -89,7 +89,7 @@ export default function LeftSidebar({onClick}) {
                 </ul>
             </nav>
             <div className="dashboard-menu-bottom mt-auto">
-                <Link className="d-flex align-items-center justify-content-center btn bg-primary fs-6 position-relative z-1 rounded-pill">
+                <Link to="/create-strategies-sidebar" className="d-flex align-items-center justify-content-center btn bg-primary fs-6 position-relative z-1 rounded-pill">
                     <span className="circle d-flex align-items-center justify-content-center rounded-pill position-absolute top-50 start-0 translate-middle-y border border-2 border-primary">
                         <HiOutlinePlus />
                     </span>
