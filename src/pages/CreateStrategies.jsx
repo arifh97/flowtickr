@@ -23,12 +23,12 @@ export default function CreateStrategies() {
               </svg>
             </button>
           </div>
-          <div className="header-right d-flex gap-3 align-items-center">
+          <div className="header-right d-flex gap-2 gap-xl-3 align-items-center">
             <div className="arrow-btn p-1 d-flex gap-1">
               <button><BsArrowRight /></button>
               <button><BsArrowDown /></button>
             </div>
-            <div className="header-right-btn d-flex gap-3">
+            <div className="header-right-btn d-flex gap-2 gap-xl-3">
               <button className="btn text-white padding">Close</button>
               <button className="btn bg-primary padding">Save</button>
               <button className="btn play text-primary d-flex align-items-center justify-content-center"><BsPlay /></button>
@@ -149,14 +149,18 @@ export default function CreateStrategies() {
                 <div className="single d-flex justify-content-between align-items-center">Above <LiaAngleDownSolid /></div>
                 <div className="single d-flex justify-content-between align-items-center">30 <LiaAngleDownSolid /></div>
               </div>
-              <div className="content-header-btn d-flex gap-3">
+              <div className="content-header-btn d-flex gap-2 gap-xl-3">
                 <button className="btn">Reset</button>
                 <button className="btn bg-primary">Save</button>
               </div>
             </div>
-            <div className="drop text-center d-flex align-items-center flex-column">
-              <img className='style' src={lineArrow} alt="" />
+            <div className="drop mx-auto text-center d-flex align-items-center justify-content-center flex-column">
               <button className="btn btn1 d-inline-block bg-primary">Start</button>
+              <img className='style1' src={lineArrow} alt="" />
+              <div className="drop-btn btn">SPY Price is increased 45%  since close 5 days ago</div>
+              <img className='style1' src={lineArrow} alt=""/>
+              <div className="drop-btn btn">INFY if 50 EMA&#62;100 EMA</div>
+              <img className='style1' src={lineArrow} alt="" />
               <button className="drop-btn btn text-primary gap-2 d-flex align-items-center">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16.5 11.5V14.8333C16.5 15.2754 16.3244 15.6993 16.0118 16.0118C15.6993 16.3244 15.2754 16.5 14.8333 16.5H3.16667C2.72464 16.5 2.30072 16.3244 1.98816 16.0118C1.67559 15.6993 1.5 15.2754 1.5 14.8333V11.5M4.83333 7.33333L9 11.5M9 11.5L13.1667 7.33333M9 11.5V1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -168,43 +172,43 @@ export default function CreateStrategies() {
           <div className="createStrategies-leftBar rightBar">
             <p className='action'>Properties</p>
             <div className="single d-flex ">
-              <div className="it w-100 d-flex justify-content-between align-items-center">
+              <div className="it border-0 w-100 d-flex justify-content-between align-items-center">
                 <div className="d-flex "> Symbol &#62; <span>Gold</span></div>
                 <LiaAngleDownSolid />
               </div>
             </div>
             <div className="single d-flex ">
-              <div className="it w-100 d-flex justify-content-between align-items-center">
+              <div className="it border-0 w-100 d-flex justify-content-between align-items-center">
                 <div className="d-flex "> Expiration &#62; <span>6 month</span></div>
                 <LiaAngleDownSolid />
               </div>
             </div>
             <div className="single d-flex ">
-              <div className="it w-100 d-flex justify-content-between align-items-center">
+              <div className="it border-0 w-100 d-flex justify-content-between align-items-center">
                 <div className="d-flex "> Short Put  &#62; <span>-.30 delta</span></div>
                 <LiaAngleDownSolid />
               </div>
             </div>
             <div className="single d-flex ">
-              <div className="it w-100 d-flex justify-content-between align-items-center">
+              <div className="it border-0 w-100 d-flex justify-content-between align-items-center">
                 <div className="d-flex "> Long Put &#62; <span>-.10 delta</span></div>
                 <LiaAngleDownSolid />
               </div>
             </div>
             <div className="single d-flex ">
-              <div className="it w-100 d-flex justify-content-between align-items-center">
+              <div className="it border-0 w-100 d-flex justify-content-between align-items-center">
                 <div className="d-flex ">Position Size &#62; <span>1 contact</span></div>
                 <LiaAngleDownSolid />
               </div>
             </div>
             <div className="single d-flex ">
-              <div className="it w-100 d-flex justify-content-start align-items-center">
+              <div className="it border-0 w-100 d-flex justify-content-start align-items-center">
                 <div className="d-flex ">Price &#62; <span>100% of bid/ask&#160;&#160;</span></div>
                 <LiaAngleDownSolid />
               </div>
             </div>
             <div className="single d-flex ">
-              <div className="it w-100 d-flex justify-content-start align-items-center">
+              <div className="it border-0 w-100 d-flex justify-content-start align-items-center">
                 <div className="d-flex ">Exit Options &#62; <span>None&#160;&#160;</span></div>
                 <LiaAngleDownSolid />
               </div>
