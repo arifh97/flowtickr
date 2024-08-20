@@ -8,6 +8,8 @@ import listIcon_1 from '../assets/img/dashboard/graph-list-icon-1.svg'
 import listIcon_2 from '../assets/img/dashboard/graph-list-icon-2.svg'
 import listIcon_3 from '../assets/img/dashboard/graph-list-icon-3.svg'
 import { Link } from 'react-router-dom'
+import TaskList from '../components/dashbaord/TaskList'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
   const graphList = [
@@ -98,6 +100,14 @@ export default function Home() {
       des: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint Velit officia.",
     },
   ]
+  const [isTask, setIsTask] = useState(true)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsTask(false)
+    }, 10000)
+    return () => clearTimeout(timeout)
+  })
   return (
     <>
       <PageTitle title="Home" />
@@ -147,6 +157,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      { }
+      {isTask &&
+        <TaskList onClick={() => setIsTask(false)} />
+      }
     </>
   )
 }

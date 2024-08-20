@@ -15,7 +15,6 @@ import Profile from './pages/Profile'
 import Subscribe from './pages/Subscribe'
 import StrategiesDetails from './pages/StrategiesDetails'
 import CreateStrategies from './pages/CreateStrategies'
-import CreateStrategiesSideMenu from './pages/CreateStrategiesSideMenu'
 
 const router = createBrowserRouter([
   {
@@ -39,10 +38,6 @@ const router = createBrowserRouter([
       {
         path: '/create-strategies',
         element:<CreateStrategies/>
-      },
-      {
-        path: '/create-strategies-sidebar',
-        element:<CreateStrategiesSideMenu/>
       },
       {
         path:'/strategies-details',
