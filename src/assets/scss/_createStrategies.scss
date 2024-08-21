@@ -3,6 +3,11 @@
         background-color: $heading2;
         padding: 12px 20px;
         border-radius: 12px 12px 0 0;
+        @include mmd {
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center !important;
+        }
         & .header {
             &-left {
                 & .backBtn {
@@ -16,10 +21,24 @@
                     background-color: $card-bg;
                     margin-right: 12px;
                     font-size: 19px;
+                    @include lg {
+                        --size: 38px;
+                        margin-right: 8px;
+                    }
+                    @include mmd {
+                        --size: 38px;
+                        margin-right: 8px;
+                    }
                 }
                 & p {
                     color: $white;
                     margin-right: 16px;
+                    @include lg {
+                        margin-right: 8px;
+                    }
+                    @include mmd {
+                        margin-right: 8px;
+                    }
                 }
                 & .edit {
                     --size: 30px;
@@ -31,6 +50,9 @@
                 }
             }
             &-right {
+                @include mmd {
+                    flex-wrap: wrap;
+                }
                 & button {
                     border: 1px solid #EAEAEA33;
                 }
@@ -62,16 +84,45 @@
                     padding: 0;
                     font-size: 25px;
                     padding-left: 2px;
+                    @include lg {
+                        font-size: 21px;
+                        --size: 35px;
+                        padding-left: 0;
+                        & svg {
+                            width: 16px;
+                        }
+                    }
+                    @include mmd {
+                        font-size: 21px;
+                        --size: 35px;
+                        padding-left: 0;
+                        & svg {
+                            width: 16px;
+                        }
+                    }
                 }
                 &-btn {
                     & .padding {
                         padding: 10px 24px;
+                        @include lg {
+                            padding: 8px 24px;
+                        }
+                        @include mmd {
+                            padding: 8px 24px;
+                        }
                     }
                 }
             }
         }
     }
     &-wrap {
+        --width: 276px;
+        @include lg {
+            overflow: auto;
+        }
+        @include mmd {
+            overflow: auto;
+        }
         & .action {
             color: $heading;
             font-weight: 500;
@@ -87,7 +138,7 @@
         }
     }
     &-leftBar {
-        width: 276px;
+        width: var(--width);
         padding: 0 16px;
         flex: 0 0 auto;
         & .single {
@@ -154,12 +205,13 @@
             margin-top: 24px;
             position: relative;
             z-index: 1;
-            & .style {
-                position: absolute;
-                top: 38px;
-                left: 50%;
-                z-index: -1;
-                transform: translate(-50%, 0);
+            max-width: 263px;
+            & img {
+                margin-top: -2px;
+            }
+            & .btn {
+                --bs-btn-padding-y: 8px;
+                --bs-btn-padding-x: 16px;
             }
             & .btn1 {
                 &:hover {
@@ -169,19 +221,52 @@
                 }
             }
             &-btn {
-                margin-top: 40px;
                 background-color: #EEF6F4;
             }
         }
         & .content {
             &-header {
-                width: 931px;
+                @include xxxl {
+                    width: 931px;
+                }
                 padding: 8px 8px 8px 16px;
                 border-radius: 12px;
                 background: $white;
                 box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
                 margin-top: 20px;
+                width: 100%;
+                @include xxl {
+                    gap: 10px;
+                    flex-wrap: wrap;
+                }
+                @include xl {
+                    gap: 10px;
+                    flex-wrap: wrap;
+                    padding: 8px 14px;
+                }
+                @include lg {
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    padding: 8px 14px;
+                }
+                @include mmd {
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    padding: 8px 14px;
+                }
                 &-left {
+                    @include xxl {
+                        flex-wrap: wrap;
+                    }
+                    @include xl {
+                        flex-wrap: wrap;
+                    }
+                    @include lg {
+                        flex-wrap: wrap;
+                    }
+                    @include mmd {
+                        flex-wrap: wrap;
+                    }
                     & .single,
                     .commonInput {
                         border-radius: 8px;
@@ -192,12 +277,33 @@
                         font-size: 12px;
                         color: $heading;
                         font-weight: 500;
+                        @include xxl {
+                            width: 120px;
+                        }
+                        @include xl {
+                            width: calc(50% - 5px);
+                        }
+                        @include lg {
+                            width: calc(50% - 5px);
+                        }
+                        @include mmd {
+                            width: calc(50% - 5px);
+                        }
                     }
                     & .line {
                         width: 1px;
                         height: 100%;
                         background-color: $border;
                         max-height: 34px;
+                        @include xl {
+                            display: none;
+                        }
+                        @include lg {
+                            display: none;
+                        }
+                        @include mmd {
+                            display: none;
+                        }
                     }
                     & .single {
                         @include transition;
@@ -208,6 +314,7 @@
                             }
                         }
                         & ul {
+                            display: none !important;
                             opacity: 0;
                             @include transition;
                             width: 212px;
@@ -219,6 +326,7 @@
                             padding: 16px 0;
                             top: 30px;
                             right: 0;
+                            z-index: 2;
                             & li {
                                 padding: 8px 16px;
                                 &:not(:last-child) {
@@ -243,8 +351,26 @@
                     }
                 }
                 &-btn {
+                    @include xl {
+                        width: 100%;
+                    }
+                    @include lg {
+                        width: 100%;
+                    }
+                    @include mmd {
+                        width: 100%;
+                    }
                     & button {
                         padding: 10px 35px;
+                        @include xl {
+                            width: calc(50% - 5px);
+                        }
+                        @include lg {
+                            width: calc(50% - 5px);
+                        }
+                        @include mmd {
+                            width: calc(50% - 5px);
+                        }
                         &:first-child {
                             border-color: $border !important;
                         }
