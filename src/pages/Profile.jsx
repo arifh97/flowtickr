@@ -69,19 +69,21 @@ export default function Profile() {
                   <div className='position-relative z-0'>
                     <div className='position-relative z-0'>
                       <div className="image"><img className='w-100' src={profilebanner} alt="" /></div>
-                      <Link to="/">
-                        <div className=" d-flex justify-content-center align-items-center upload-banner position-absolute z-1"><img src={uploadicon} alt="" /></div>
-                      </Link>
+                      <label htmlFor='cover_upload' className=" d-flex justify-content-center align-items-center upload-banner position-absolute z-1">
+                        <input type="file" className='d-none' id='cover_upload' />
+                        <img src={uploadicon} alt="" />
+                      </label>
                     </div>
                     <div className='position-absolute z-2 start-50 translate-middle profile-area'>
                       <div className="profile-img "><img src={profileimg} alt="" /></div>
-                      <Link to="/">
-                        <div className="profile-edit start-50 translate-middle bg-primary  d-flex justify-content-center align-items-center position-absolute z-3">
+                      <a >
+                        <label htmlFor='profile_img' className="profile-edit start-50 translate-middle bg-primary  d-flex justify-content-center align-items-center position-absolute z-3">
+                          <input type="file" className='d-none' id='profile_img' />
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.99999 3.99996L12 5.99996M8.66666 13.3333H14M3.33332 10.6666L2.66666 13.3333L5.33332 12.6666L13.0573 4.94263C13.3073 4.69259 13.4477 4.35351 13.4477 3.99996C13.4477 3.64641 13.3073 3.30733 13.0573 3.05729L12.9427 2.94263C12.6926 2.69267 12.3535 2.55225 12 2.55225C11.6464 2.55225 11.3074 2.69267 11.0573 2.94263L3.33332 10.6666Z" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
-                        </div>
-                      </Link>
+                        </label>
+                      </a>
                     </div>
                   </div>
                   <div className="profile-history">
@@ -138,8 +140,8 @@ export default function Profile() {
                     </svg>
                   </button>
                 </div>
-                <button onClick={()=>setAddBroker(!addBroker)} className='bg-primary btn fs-6 fw-medium d-flex align-items-center  gap-2'>
-                 <LuPlus />Add New
+                <button onClick={() => setAddBroker(!addBroker)} className='bg-primary btn fs-6 fw-medium d-flex align-items-center  gap-2'>
+                  <LuPlus />Add New
                 </button>
               </div>
               <div className="broken-table overflow-auto ">
@@ -227,11 +229,10 @@ export default function Profile() {
           <div className="login-otp-wrap bg-white py-4 px-3 rounded-4 h-100 ms-auto">
             <div className="login-otp-scroll h-100 px-2 d-flex flex-column overflow-auto">
               <div className="login-popup-header position-sticky top-0 start-0 z-2 w-100 bg-white d-flex align-items-center gap-2 mb-3 pb-md-1">
-                <button onClick={()=>setAddBroker(!addBroker)} className="login-close text-body d-flex align-items-center justify-content-center rounded-pill border-0 p-0" ><LiaAngleLeftSolid /></button>
+                <button onClick={() => setAddBroker(!addBroker)} className="login-close text-body d-flex align-items-center justify-content-center rounded-pill border-0 p-0" ><LiaAngleLeftSolid /></button>
                 <h4 className="mb-0">Add New Broker</h4>
               </div>
               <div className=" gap-3 mb-3">
-
                 <p className='broken-contact fs-6'>Select Broker</p>
                 <Form.Select aria-label="Default select example">
                   <option>Select</option>
