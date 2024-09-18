@@ -10,11 +10,12 @@ export default function MainLayout() {
   }
   const pathname = useLocation();
   useEffect(() => {
-    window.scrollTo(0,0)
-  },[pathname])
+    let scroll_body = document.querySelector('.dashboard-main');
+    scroll_body.scrollTo(0, 0)
+  }, [pathname])
   return (
     <div className='dashboard d-flex flex-wrap'>
-      <div className={`dashboard-left vh-100 ${leftSide&&'showSidebar'}`}>
+      <div className={`dashboard-left vh-100 ${leftSide && 'showSidebar'}`}>
         <LeftSidebar onClick={() => showLeftSide()} />
       </div>
       <div className="dashboard-right">

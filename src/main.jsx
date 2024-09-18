@@ -15,6 +15,7 @@ import Profile from './pages/Profile'
 import Subscribe from './pages/Subscribe'
 import StrategiesDetails from './pages/StrategiesDetails'
 import CreateStrategies from './pages/CreateStrategies'
+import Help from './pages/Help'
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: '/marketplace',
         element:<Marketplace />
+      },
+      {
+        path: '/help',
+        element:<Help />
       },
       {
         path: '/profile',
