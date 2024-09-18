@@ -1,8 +1,9 @@
 .help {
     &-area{
-        max-width: 845px;
+        width: 843px;
+
         @include mmd{
-            max-width: auto;
+            width: auto;
         }
     }
     h2 {
@@ -25,7 +26,6 @@
         --padding: 20px;
         border-radius: var(--accordion-border-radius, 8px);
         background-color: #FFFFFF;
-        // border: var(--border-width, 1px) solid var(--accordion-border-color, $border);
         border: 0;
         overflow: hidden;
         margin-bottom: 16px;
