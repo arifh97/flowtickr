@@ -54,6 +54,14 @@
         &:not(.collapsed){
          background-color: transparent;
         }
+        &::after{
+            width: 24px;
+            height: 24px;
+            @include sm{
+                width: 20px;
+                height: 20px;
+            }
+        }
     }
 
     &-body {
