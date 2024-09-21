@@ -46,6 +46,10 @@
         font-weight: 600;
         color: #151B22 !important;
         padding: var(--padding);
+        align-items: center;
+        @include sm{
+            align-items: start;
+        }
 
         &:focus {
             border-color: transparent !important;
