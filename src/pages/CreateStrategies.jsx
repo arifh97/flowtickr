@@ -242,7 +242,7 @@ export default function CreateStrategies() {
               </div>
               <input className='commonInput' type="text" value="Togs" />
               <div className="content-header-btn d-flex gap-3 mt-3">
-                <button className="btn">Reset</button>
+                <button className="btn" onClick={() => setDroppedItems([])}>Reset</button>
                 <button className="btn bg-primary">Save</button>
               </div>
             </div>
