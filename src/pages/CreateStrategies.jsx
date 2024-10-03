@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { LiaAngleLeftSolid, LiaAngleDownSolid } from "react-icons/lia";
 import { BsArrowRight, BsArrowDown, BsPlay } from "react-icons/bs";
-import { HiOutlinePlusSm } from "react-icons/hi";
+import { IoIosClose } from "react-icons/io";
 import lineArrow from '../assets/img/lineArrow.svg'
-import { useState } from "react";
 
 export default function CreateStrategies() {
   const [leftBar, setLeftBar] = useState(false)
@@ -20,25 +20,34 @@ export default function CreateStrategies() {
     {
       title: 'Decision',
       data: [
-        `<span>Symbols</span> Price is <span>Above</span> <span>$100</span>`,
-        `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
-        `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
-        `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
-        `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
-        `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
-        `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
-      ]
-    },
-    {
-      title: 'Decision two',
-      data: [
-        `<span>Symbols</span> Price is <span>Above</span> <span>$100</span>`,
-        `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
-        `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
-        `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
-        `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
-        `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
-        `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
+        {
+          id: 1,
+          value: `<span>Symbols</span> Price is <span>Above</span> <span>$100</span>`,
+        },
+        {
+          id: 2,
+          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
+        },
+        {
+          id: 3,
+          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
+        },
+        {
+          id: 4,
+          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
+        },
+        {
+          id: 5,
+          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
+        },
+        {
+          id: 6,
+          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
+        },
+        {
+          id: 7,
+          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
+        },
       ]
     },
   ]
@@ -56,6 +65,10 @@ export default function CreateStrategies() {
       event.dataTransfer.getData("application/json")
     );
     setDroppedItems([...droppedItems, droppedItem]);
+  };
+
+  const removeDrapedItem = (id) => {
+    setDroppedItems(droppedItems.filter((item) => item.id !== id));
   };
 
   return (
@@ -116,7 +129,7 @@ export default function CreateStrategies() {
                       draggable
                       onDragStart={(e) => handleDragStart(e, item)}
                     >
-                      <p dangerouslySetInnerHTML={{ __html: item }}></p>
+                      <p dangerouslySetInnerHTML={{ __html: item.value }}></p>
                       {/* <div className="plus bg-primary d-flex align-items-center justify-content-center"><HiOutlinePlusSm /></div> */}
                     </div>
                   ))}
@@ -144,7 +157,7 @@ export default function CreateStrategies() {
                   <div className="single d-flex justify-content-between align-items-center">30 <LiaAngleDownSolid /></div>
                 </div>
                 <div className="content-header-btn d-flex gap-2 gap-xl-3">
-                  <button className="btn">Reset</button>
+                  <button className="btn" onClick={() => setDroppedItems([])}>Reset</button>
                   <button className="btn bg-primary">Save</button>
                 </div>
               </div>
@@ -159,8 +172,11 @@ export default function CreateStrategies() {
               {droppedItems.length > 0 ? (
                 <>
                   {droppedItems.map((item) => (
-                    <div key={item.id}>
-                      <div className="drop-btn btn d-block" dangerouslySetInnerHTML={{ __html: item }}></div>
+                    <div key={item.id} style={{cursor:'pointer'}}>
+                      <div className="drop-btn btn d-block position-relative">
+                        <div dangerouslySetInnerHTML={{ __html: item.value }}></div>
+                        <span onClick={() => removeDrapedItem(item.id)} className="close position-absolute bottom-100 end-0 bg-white fs-18 d-flex align-items-center justify-content-center"><IoIosClose /></span>
+                      </div>
                       <img className='style1' src={lineArrow} alt="" />
                     </div>
                   ))}
