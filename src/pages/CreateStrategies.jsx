@@ -3,6 +3,7 @@ import { LiaAngleLeftSolid, LiaAngleDownSolid } from "react-icons/lia";
 import { BsArrowRight, BsArrowDown, BsPlay } from "react-icons/bs";
 import { IoIosClose } from "react-icons/io";
 import lineArrow from '../assets/img/lineArrow.svg'
+import { Link } from "react-router-dom";
 
 export default function CreateStrategies() {
   const [leftBar, setLeftBar] = useState(false)
@@ -30,23 +31,23 @@ export default function CreateStrategies() {
         },
         {
           id: 3,
-          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
+          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 2 day Ago</span>`,
         },
         {
           id: 4,
-          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
+          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 3 day Ago</span>`,
         },
         {
           id: 5,
-          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
+          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 4 day Ago</span>`,
         },
         {
           id: 6,
-          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
+          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 5 day Ago</span>`,
         },
         {
           id: 7,
-          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 1 day Ago</span>`,
+          value: `<span>Symbols</span> Price is <span>Increased %</span> Since <span>Close 6 day Ago</span>`,
         },
       ]
     },
@@ -76,9 +77,9 @@ export default function CreateStrategies() {
       <div className="createStrategies">
         <div className="createStrategies-header d-flex justify-content-between">
           <div className="header-left d-flex align-items-center">
-            <button className="backBtn p-0 border-0 text-white d-flex align-items-center justify-content-center">
+            <Link to="/strategies" className="backBtn p-0 border-0 text-white d-flex align-items-center justify-content-center">
               <LiaAngleLeftSolid />
-            </button>
+            </Link>
             <p className=''>Strategy name</p>
             <button className="edit bg-primary border-0  d-flex align-items-center justify-content-center">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +107,7 @@ export default function CreateStrategies() {
         </div>
         <div className="createStrategies-wrap d-flex">
           <div className="createStrategies-leftBar pb-3">
-            <p className='action d-flex align-items-center justify-content-between'>Actions Panel <button className="action-btn p-0 border-0 d-flex align-items-center justify-content-center"><LiaAngleLeftSolid /></button></p>
+            <p className='action d-flex align-items-center justify-content-between'>Actions Panel</p>
             <div className="action-panel">
               {draggableData.map((item, index) => (
                 <div className="single" key={index}>
