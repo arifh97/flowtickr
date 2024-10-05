@@ -11,12 +11,13 @@ import profileimg from "../assets/img/profile-img.png"
 import { Link } from 'react-router-dom';
 
 import { LiaAngleLeftSolid } from 'react-icons/lia';
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Select from 'react-select';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
 import { CiEdit } from "react-icons/ci";
 import { LuPlus } from "react-icons/lu";
+import Api from "../api/api.js";
 
 const options = [
   { value: 'CDS (INR)', label: 'CDS (INR)' },
@@ -53,6 +54,23 @@ export default function Profile() {
       info: "Info"
     }
   ]
+
+  let [user, setUser]=useState(null)
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
+  async function getProfile() {
+    try {
+      let res = await Api.profile();
+      setUser(res?.data[0]);
+      console.log(res?.data[0]);
+    } catch (error) {
+      alert("Error while pending tasks");
+    }
+  }
+
   return (
     <>
       <div className='dashboard-wrap profile'>
@@ -88,8 +106,8 @@ export default function Profile() {
                   </div>
                   <div className="profile-history">
                     <div className="form-item d-lg-flex gap-3 mb-2 pb-1 w-100">
-                      <FormBox className='w-100' label="Name" placeholder="Murad Hossain" />
-                      <FormBox className='w-100' label="Email" placeholder="muraddc0@gmail.com" />
+                      <FormBox className='w-100' label="Name" placeholder={user?.first_name+" "+user?.last_name} />
+                      <FormBox className='w-100' label="Email" placeholder={user?.email} />
                     </div>
                     <div className="form-item  mb-2 pb-1">
                       <PhoneInput />

@@ -10,10 +10,47 @@ import icon3 from "../assets/img/marketplace/3.png"
 import icon4 from "../assets/img/marketplace/4.png"
 import icon5 from "../assets/img/marketplace/5.png"
 import icon6 from "../assets/img/marketplace/5.png"
+import {useEffect, useState} from "react";
+import Api from "../api/api.js";
 
 
 
 export default function MarketPlace() {
+
+  let [marketPlace, setMarketPlace]=useState([])
+
+  const values= [
+    {
+      image: icon1,
+      price: "$180.99",
+      value: "Trades"
+    },
+    {
+      image: icon2,
+      price: "11.6k",
+      value: "Drawdown"
+    },
+    {
+      image: icon3,
+      price: "180k",
+      value: "Min Capital"
+    },
+    {
+      image: icon4,
+      price: "$10.99",
+      value: "Cost"
+    },
+    {
+      image: icon5,
+      price: "1 Months",
+      value: "Duration"
+    },
+    {
+      image: icon6,
+      price: "180k",
+      value: "Min Capital"
+    },
+  ]
 
   const marketPlaceCards = [
     {
@@ -245,6 +282,21 @@ export default function MarketPlace() {
       ]
     },
   ]
+
+  useEffect(() => {
+    getMarketPlace();
+  }, []);
+
+  async function getMarketPlace() {
+    try {
+      let res = await Api.marketPlace();
+      setMarketPlace(res?.data);
+      console.log(res?.data);
+    } catch (error) {
+      alert("Error while fetching Marketplace");
+    }
+  }
+
   return (
     <div className='dashboard-wrap marketplace'>
       <div className="marketplace-header mb-3 mb-md-4 d-flex flex-wrap align-items-center justify-content-between">
@@ -266,17 +318,17 @@ export default function MarketPlace() {
       </div>
       <Container fluid className="marketplace-items g-0">
         <Row className='marketplace-items-row'>
-          {marketPlaceCards.map((item, idx) => (
+          {marketPlace?.map((item, idx) => (
             <Col xs={12} lg={6} xl={4} className='marketplace-items-cards mb-2 mb-md-3' key={idx}>
               <div className="marketplace-items-cards-card">
-                <p className='title mb-2 pb-1 fs-6 fw-medium '>{item.title}</p>
-                <p className='mb-2 pb-1 des fs-14 fw-normal'>{item.des}<span>Read More</span></p>
+                <p className='title mb-2 pb-1 fs-6 fw-medium '>{item?.strategy_name}</p>
+                <p className='mb-2 pb-1 des fs-14 fw-normal'>{item?.desc}<span>Read More</span></p>
                 <div className="card-history mb-3 d-flex align-items-center gap-2">
-                  <p className='month fs-14 fw-medium '>Created: {item.time}</p>
-                  <p className='live fs-14 fw-medium'>Live development: {item.live}</p>
+                  <p className='month fs-14 fw-medium '>Created: {item?.start_date}</p>
+                  <p className='live fs-14 fw-medium'>Live development: {item?.live}</p>
                 </div>
                 <div className="all-valur-history mb-3 d-grid grid-count-2 gap-2">
-                  {item.values.map((itm, iddx) => (
+                  {values?.map((itm, iddx) => (
                     <div className='total-value mb-2 d-flex align-items-center gap-2 p-2' key={iddx}>
                       <div className="image-area">
                         <img src={itm.image} alt="" />

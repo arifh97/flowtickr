@@ -1,19 +1,21 @@
 
 import PageTitle from '../components/PageTitle'
 import { GoListUnordered } from "react-icons/go";
-
 import threeDot from '../assets/img/dashboard/threeDot.svg'
-import exportIcon from '../assets/img/dashboard/export-icon.svg'
-import plusIcon from '../assets/img/dashboard/plus.svg'
 import { TfiAngleDown } from "react-icons/tfi";
 import { BsThreeDots } from "react-icons/bs";
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import { FaPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import StrategiesDC from '../components/StrategiesDC'
+import Api from '../api/api.js'
 
 
 export default function Strategies() {
+
+  let [strategiesMe, setStrategiesMe]=useState([])
+  let [strategiesSub, setStrategiesSub]=useState([])
+
   const profitCard = [
     {
       title: 'Strategy Name AI Calculation ',
@@ -99,6 +101,21 @@ export default function Strategies() {
   ]
   const [isList, setIsList] = useState(false);
   const [detailsModal, setDetailsModal] = useState(false);
+
+  useEffect(() => {
+    getStrategies();
+  }, []);
+
+  async function getStrategies() {
+    try {
+      let res = await Api.strategiesMe();
+      setStrategiesMe(res?.data?.my_strategies);
+      setStrategiesSub(res?.data?.sub_strategies)
+    } catch (error) {
+      alert("Error while fetching Strategies");
+    }
+  }
+
   return (
     <>
       <PageTitle title="Home" />
@@ -141,11 +158,11 @@ export default function Strategies() {
               <div className="createdByMe">
                 <h3 id="title" className='text-heading fs-16 fw-bold lh-base mt-4 mb-3'>Created By Me</h3>
                 <div className="profile-profit-cards d-flex flex-wrap">
-                  {profitCard.map((item, index) => (
+                  {strategiesMe?.map((item, index) => (
                     <div className="profile-profit-card bg-white" key={index}>
-                      <span className="subTitle fs-12">Subscribed</span>
-                      <h4 className='mb-2 pb-1 fs-16 lh-base fw-medium'>{item.title}</h4>
-                      <p className='fs-14 mb-2 pb-2 lh-base'>{item.des} <a href="#" className='read fw-semibold'> {item.read_more}</a></p>
+                      <span className="subTitle fs-12">{(item?.is_subscribed == 'Y')?"Subscribed":"Un Subscribed"}</span>
+                      <h4 className='mb-2 pb-1 fs-16 lh-base fw-medium'>{item?.strategy_name}</h4>
+                      <p className='fs-14 mb-2 pb-2 lh-base'>{item?.desc} <a href="#" className='read fw-semibold'> {item.read_more}</a></p>
                       <div className='d-flex create'><span className='fs-12 lh-base fw-medium text-heading'>Created: {item.create_date} months ago</span> <span className='fs-12 lh-base fw-medium '>Live development: {item.live_development}</span></div>
                       <div className="card-btn">
                         <Link to="/strategies-details" className="btn">Run Strategy</Link>
@@ -158,11 +175,11 @@ export default function Strategies() {
               <div className="fromMarketplace">
                 <h3 id="title" className='text-heading fs-16 fw-bold lh-base mb-3'>From Marketplace</h3>
                 <div className="profile-profit-cards d-flex flex-wrap">
-                  {profitCard.map((item, index) => (
+                  {strategiesSub?.map((item, index) => (
                     <div className="profile-profit-card bg-white" key={index}>
-                      <span className="subTitle fs-12">Subscribed</span>
-                      <h4 className='mb-2 pb-1 fs-16 lh-base fw-medium'>{item.title}</h4>
-                      <p className='fs-14 mb-2 pb-2 lh-base'>{item.des} <a href="#" className='read fw-semibold'> {item.read_more}</a></p>
+                      <span className="subTitle fs-12">{(item?.is_subscribed == 'Y')?"Subscribed":"Un Subscribed"}</span>
+                      <h4 className='mb-2 pb-1 fs-16 lh-base fw-medium'>{item?.strategy_name}</h4>
+                      <p className='fs-14 mb-2 pb-2 lh-base'>{item?.desc} <a href="#" className='read fw-semibold'> {item.read_more}</a></p>
                       <div className='d-flex create'><span className='fs-12 lh-base fw-medium text-heading'>Created: {item.create_date} months ago</span> <span className='fs-12 lh-base fw-medium '>Live development: {item.live_development}</span></div>
                       <div className="card-btn">
                         <a href="#" className="btn">Run Strategy</a>

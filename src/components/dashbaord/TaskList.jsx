@@ -1,6 +1,11 @@
 import { LiaTimesSolid } from "react-icons/lia";
+import {useEffect, useState} from "react";
+import Api from "../../api/api.js";
 
 export default function TaskList({onClick}) {
+
+  let [tasks, setTasks]=useState([])
+
   const isComplete = [
     {
       title: 'Recharging Wallet for subscription.',
@@ -23,6 +28,20 @@ export default function TaskList({onClick}) {
       value:true,
     },
   ]
+
+  useEffect(() => {
+    getPendingTasks();
+  }, []);
+
+  async function getPendingTasks() {
+    try {
+      let res = await Api.pending();
+      setTasks(res?.data[0]?.PROFILE);
+    } catch (error) {
+      alert("Error while pending tasks");
+    }
+  }
+
   return (
     <div className="task-list bg-black bg-opacity-20 w-100 h-100 position-fixed top-0 start-0 z-1 d-flex align-items-end justify-content-end">
       <div className="bg-white p-3 rounded-3">
@@ -31,10 +50,10 @@ export default function TaskList({onClick}) {
           <button onClick={onClick} className="task-close fs-6 p-0 rounded-pill d-flex align-items-center justify-content-center"><LiaTimesSolid /></button>
         </div>
         <ul>
-          {isComplete.map((item,index) => (
+          {tasks?.map((item,index) => (
             <li className={`d-flex align-items-center gap-2 ${item.value?'complete':''}`} key={index}>
               <span className="icon rounded-pill"></span>
-              <span className="content">{item.title}</span>
+              <span className="content">{item}</span>
             </li>
           ))}
         </ul>

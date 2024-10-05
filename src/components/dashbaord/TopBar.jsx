@@ -1,12 +1,30 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { LiaAngleDownSolid, LiaAngleUpSolid } from "react-icons/lia";
 import { FaBars } from "react-icons/fa";
 import welcome from '../../assets/img/dashboard/welcome.png'
 import profile_img from '../../assets/img/dashboard/profile.png'
 import logo from '../../assets/img/logo.png'
+import Api from "../../api/api.js";
 
 export default function TopBar({onClick}) {
+
+    let [user, setUser]=useState(null)
+
+    useEffect(() => {
+        getProfile();
+    }, []);
+
+    async function getProfile() {
+        try {
+            let res = await Api.profile();
+            setUser(res?.data[0]);
+            console.log(res?.data[0]);
+        } catch (error) {
+            alert("Error while pending tasks");
+        }
+    }
+
     const [profileModal, setProfileModal] = useState(false);
     return (
         <>
@@ -14,7 +32,7 @@ export default function TopBar({onClick}) {
             <div className='d-none d-xl-flex align-items-center welcome gap-2'>
                 <div className="welcome-img"><img width="40px" height="40px" src={welcome} alt="" /></div>
                 <div className="welcome-text">
-                    <h5 className="mb-1">Good morning, Murad hossain</h5>
+                    <h5 className="mb-1">Good morning, {user?.first_name+" "+user?.last_name}</h5>
                     <p className='fs-14'>Have a look with your activity in dashboard.</p>
                 </div>
             </div>
@@ -58,7 +76,7 @@ export default function TopBar({onClick}) {
                 <div className={`profile position-relative z-1`}>
                     <button onClick={() => setProfileModal(!profileModal)} className={`profile-btn pe-2 bg-white rounded-pill d-flex align-items-center justify-content-center gap-2 ${profileModal&&'show'}`}>
                         <div className="img"><img src={profile_img} alt="" /></div>
-                        <span className='text d-none d-lg-block fs-14 lh-base'>Murad Hossain</span>
+                        <span className='text d-none d-lg-block fs-14 lh-base'>{user?.first_name+" "+user?.last_name}</span>
                         {profileModal ? <LiaAngleUpSolid /> : <LiaAngleDownSolid />}
                     </button>
                     {profileModal &&
