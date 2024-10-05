@@ -74,4 +74,14 @@ export default class Api {
             return error.data;
         }
     }
+
+    // pnl chart
+    static pnlChart = async () => {
+        try {
+            const res = await axios.post('dashboard/pnlboard');
+            return res.data;
+        } catch (error) {
+            return error.data;
+        }
+    }
 }

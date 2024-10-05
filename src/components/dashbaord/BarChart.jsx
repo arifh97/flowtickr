@@ -1,5 +1,5 @@
 // BarChart.js
-import React from 'react';
+import {useEffect, useState} from 'react';
 import { Bar } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -9,8 +9,8 @@ import {
     Title,
     Tooltip,
     Legend,
-    scales,
 } from 'chart.js';
+import Api from "../../api/api.js";
 
 ChartJS.register(
     CategoryScale,
@@ -22,12 +22,36 @@ ChartJS.register(
 );
 
 const BarChart = () => {
+
+    const [labels, setLabels] = useState([]);
+    const [datas, setDatas] = useState([]);
+
+    useEffect(() => {
+        getPNLData();
+    }, []);
+
+    async function getPNLData() {
+        try {
+            let res = await Api.pnlChart();
+            const labelsArray = res?.data?.map(item => item?.run_date);  // extract run_date for labels
+            const datasArray = res?.data?.map(item => parseFloat(item?.overall_pnl)); // convert overall_pnl to numbers for datas
+
+            console.log("Labels: ",labelsArray)
+            console.log("data: ",datasArray)
+
+            setLabels(labelsArray);
+            setDatas(datasArray);
+        } catch (error) {
+            alert("Error while fetching PNL chart data");
+        }
+    }
+
     const data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        labels: labels?labels:['January', 'February', 'March', 'April', 'May', 'June'],
         datasets: [
             {
                 label: 'Sales',
-                data: [12, 19, 3, 5, 2, 3],
+                data: datas?datas:[12, 19, 3, 5, 2, 3],
                 backgroundColor: '#FFC834',
                 borderColor: '#FFC834',
                 borderWidth: 0,
