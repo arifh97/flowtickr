@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react'
 import PageTitle from '../components/PageTitle'
-
+import BarChart from '../components/dashbaord/BarChart'
 import banner from '../assets/img/dashboard/banner-img.png'
-import graph from '../assets/img/dashboard/profile-graph.png'
 import calendar from '../assets/img/dashboard/calendar.svg'
 import threeDot from '../assets/img/dashboard/threeDot.svg'
 import listIcon_1 from '../assets/img/dashboard/graph-list-icon-1.svg'
@@ -9,7 +9,6 @@ import listIcon_2 from '../assets/img/dashboard/graph-list-icon-2.svg'
 import listIcon_3 from '../assets/img/dashboard/graph-list-icon-3.svg'
 import { Link } from 'react-router-dom'
 import TaskList from '../components/dashbaord/TaskList'
-import { useEffect, useState } from 'react'
 import Api from "../api/api";
 
 export default function Home() {
@@ -184,9 +183,7 @@ export default function Home() {
               <h4 className='fs-6 lh-base fw-bold text-heading'>PNL</h4>
               <button className="btn"> <img src={calendar} alt="" /> Last week</button>
             </div>
-            <div className="graph">
-              <img src={graph} alt="" />
-            </div>
+            <BarChart />
           </div>
         </div>
         <div className="dashboard-wrap profile-profit d-flex flex-column">
