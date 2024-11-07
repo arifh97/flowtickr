@@ -53,7 +53,7 @@ export default function TaskList({onClick}) {
           {tasks?.map((item,index) => (
             <li className={`d-flex align-items-center gap-2 ${item.value?'complete':''}`} key={index}>
               <span className="icon rounded-pill"></span>
-              <span className="content">{item}</span>
+              <span className="content">{item.message}</span>
             </li>
           ))}
         </ul>
