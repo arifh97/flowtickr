@@ -28,12 +28,8 @@ export default function Index() {
     <>
       <PageTitle title="Login" />
       <div className="login d-flex flex-wrap align-items-center w-100 vh-100">
-        <div className="login-left d-flex align-items-end">
-          <div className="login-img w-100">
-            <img src={img} className="w-100 h-auto" alt="" />
-          </div>
-        </div>
-        <div className="login-right d-flex align-items-center">
+       
+        <div className="login-right d-flex align-items-center  mx-auto">
           <div className="login-wrap mx-auto w-100">
             <div className="logo text-center">
               <img src={logo} className="mx-auto" alt="" />
